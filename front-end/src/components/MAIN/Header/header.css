@@ -1,0 +1,17 @@
+.login-button {
+    width: 20%;
+    height: 5%;
+    right: 0;
+    position: absolute;
+}
+
+.logo-and-nav {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 5%;
+}
+
+nav {
+    display: flex;
+}

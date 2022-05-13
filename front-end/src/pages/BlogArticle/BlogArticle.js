@@ -1,7 +1,11 @@
 import React from 'react';
+import PreviewArticle from '../../components/PreviewArticle/PreviewArticle'
 
 const BlogArticle = () => {
-  return <div></div>;
-};
+  return(
+    <div>
+      <PreviewArticle />
+    </div>
+)};
 
 export default BlogArticle;

@@ -1,11 +1,13 @@
 import React from 'react';
 
+import ContactForm from '../../components/formulaires/ContactForm/ContactForm';
+
 const Contact = ({ user }) => {
-  if (user) {
-    return <></>;
-  } else {
-    return <></>;
-  }
+  return (
+    <>
+      <ContactForm />
+    </>
+  );
 };
 
 export default Contact;

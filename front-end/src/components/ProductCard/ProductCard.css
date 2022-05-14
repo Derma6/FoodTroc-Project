@@ -1,0 +1,28 @@
+.product-card {
+    width: 60vw;
+}
+
+.product-info {
+    display: flex;
+    display: flex;
+    gap: 10%;
+}
+
+.product-info h2 {
+    width: 25vw;
+    border-bottom: 3px solid rgb(255, 94, 0);
+}
+
+.product-info img {
+    width: 8vw;
+}
+
+.product-footer {
+    display: flex;
+    gap: 30%;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+}

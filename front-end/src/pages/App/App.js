@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import './App.css';
 
+//--------------------IMPORT PAGES--------------------//
+
 import Home from '../Home/Home';
 import Login from '../Login/Login';
 import SignUp from '../SignUp/SignUp';
@@ -16,12 +18,18 @@ import StockAdd from '../StockAdd/StockAdd';
 import Settings from '../Settings/Settings';
 import Error from '../Error/Error';
 
+//--------------------IMPORT COMPONENTS--------------------//
+
+import Header from '../../components/MAIN/Header/Header';
+import Footer from '../../components/MAIN/Footer/Footer';
+
 function App() {
   const [user, updateUser] = useState();
 
   return (
     <div className="App">
       <BrowserRouter>
+        <Header />
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/login" element={<Login />}></Route>
@@ -36,6 +44,7 @@ function App() {
           <Route path="/potager/parametres" element={<Settings />}></Route>
           <Route path="*" element={<Error />}></Route>
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );

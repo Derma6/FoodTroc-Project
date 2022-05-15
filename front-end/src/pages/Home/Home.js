@@ -1,13 +1,8 @@
 import React from 'react';
-import Header from '../../components/MAIN/Header/Header'
-import Footer from '../../components/MAIN/Footer/Footer'
+import './Home.css';
 
 const Home = () => {
-  return( 
-    <div>
-      <Header />
-      <Footer />
-    </div>
-)};
+  return <main></main>;
+};
 
 export default Home;

@@ -1,11 +1,12 @@
 .contact-form {
-    background-color: lightgrey;
+    background-color: white;
+    background-image: url("../../../styles/images/pano_fruitsveggies_lessOpacity.png");
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 35vw;
-    height: 55vh;
-    border-radius: 15px;padding: 1.5% 3% 1.5% 3%;
+    border-radius: 15px;
+    padding: 1.5% 3% 1.5% 3%;
 }
 
 .contact a {
@@ -18,13 +19,12 @@
 
 .inputs {
     display: flex;
-    gap: 5%;
-    height: 35vh;
+    gap: 15px;
     width: 20vw;
     flex-direction: column;
 }
 
-.inputs input {
+.contact-form .inputs input {
     height: 4.5vh;
     padding-left: 5%;
     border: 1.5px solid black;
@@ -46,4 +46,6 @@
     border: none;
     color: white;
     background-color:#ED3A03;
+    box-shadow: 1px 3px 8px black;
+    cursor: pointer;
 }

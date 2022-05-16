@@ -9,7 +9,7 @@ const ProductCard = () => {
                     <h2>ABRICOTS</h2>
                     <img alt={'homme jardin'} src={require("./man_salad.png")}/>
                 </div>
-                <img style={{width: "6vw", borderRadius:"10%"}} alt={'abricot'} className="product-picture" src={require("./Abricot-bienfaits.jpg")}/>
+                <img style={{width: "6vw", borderRadius:"10%"}} alt={'abricots'} className="product-picture" src={require("./Abricot-bienfaits.jpg")}/>
                 <div className="product-footer">
                     <div className="location">
                         <span class="material-icons">place</span>  

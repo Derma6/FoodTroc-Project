@@ -3,6 +3,7 @@
 main h1 {
   background-image: url('../../styles/images/fruitsveggies.png');
   background-repeat: no-repeat;
+  background-size: cover;
   height: 75vh;
   line-height: 75vh;
   text-align: center;
@@ -25,8 +26,7 @@ section {
   align-items: center;
   justify-content: center;
   background-color: rgb(233, 232, 232);
-  background-image: url('../../styles/images/280168328_353814946635690_3651356709753020797_n.png');
-  /* opacity: 0.5; */
+  background-image: url('../../styles/images/pano_fruitsveggies_lessOpacity.png');
   border-radius: 10px;
 }
 .first-section div img {
@@ -36,12 +36,6 @@ section {
 .first-section div p {
   text-align: center;
   padding: 20px;
-}
-.separator {
-  width: 30%;
-  height: 3px;
-  background-color: var(--secondary-color);
-  margin: 60px auto;
 }
 .second-section {
   text-align: justify;

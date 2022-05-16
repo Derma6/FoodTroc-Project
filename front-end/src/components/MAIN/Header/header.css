@@ -1,23 +1,31 @@
 header {
   display: grid;
-  justify-items: end;
+  align-items: end;
+  justify-items: center;
+  grid-template-columns: 1fr 3fr 1fr;
+  padding: 15px;
 }
-
 .login-button {
   width: fit-content;
-  margin: 20px 35px 0 0;
-  /* left: 85%;
-  top: 25px; */
+  margin-bottom: 20px;
 }
-
-.logo-and-nav {
-  width: 75%;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 header a {
-  margin: 35px;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+nav a {
+  margin: 30px;
+  padding-bottom: 10px;
+  font-weight: 500;
+}
+.active {
+  color: green;
+  border-bottom: solid 3px green;
+}
+
+@media all and (max-width: 1200px) {
+  nav a {
+    margin: 15px;
+  }
 }

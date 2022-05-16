@@ -1,0 +1,52 @@
+@import '../../styles/theme-variables.css';
+
+main h1 {
+  background-image: url('../../styles/images/fruitsveggies.png');
+  background-repeat: no-repeat;
+  height: 75vh;
+  line-height: 75vh;
+  text-align: center;
+  color: white;
+  font-size: 70px;
+  font-weight: 400;
+}
+section {
+  width: 75%;
+  margin: auto;
+}
+.first-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  margin-top: 50px;
+}
+.first-section div {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(233, 232, 232);
+  background-image: url('../../styles/images/280168328_353814946635690_3651356709753020797_n.png');
+  /* opacity: 0.5; */
+  border-radius: 10px;
+}
+.first-section div img {
+  margin: auto;
+  transform: scale(0.7);
+}
+.first-section div p {
+  text-align: center;
+  padding: 20px;
+}
+.separator {
+  width: 30%;
+  height: 3px;
+  background-color: var(--secondary-color);
+  margin: 60px auto;
+}
+.second-section {
+  text-align: justify;
+}
+h2 {
+  text-align: center;
+  margin: 30px;
+}

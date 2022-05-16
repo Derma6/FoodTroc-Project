@@ -1,28 +1,22 @@
 import React from 'react';
 
-//----------------------IMPORT MUI----------------------//
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
+import SeparatorLessMargin from '../../SeparatorLessMargin/SeparatorLessMargin';
+
+import './SignUpForm.css';
 
 const SignUpFom = () => {
   return (
     <div className="signUp-form">
       <h1>Inscription</h1>
-
-      <TextField id="name" label="PRÉNOM" variant="outlined" />
-      <TextField id="email" label="EMAIL" variant="outlined" />
-      <TextField id="password" label="MOT DE PASSE" variant="outlined" />
-      <TextField
-        id="passwordCONFIRM"
-        label="COMFIRMER MOT DE PASSE"
-        variant="outlined"
-      />
-      <TextField
-        id="location"
-        label="LOCALISATION DE VOTRE POTAGER"
-        variant="outlined"
-      />
-      <Button>S'INSCRIRE</Button>
+      <SeparatorLessMargin />
+      <div className="inputs">
+        <input id="name" placeholder="PRÉNOM" />
+        <input id="email" placeholder="EMAIL" />
+        <input id="password" placeholder="MOT DE PASSE" />
+        <input id="passwordCONFIRM" placeholder="COMFIRMER MOT DE PASSE" />
+        <input id="location" placeholder="LOCALISATION DE VOTRE POTAGER" />
+      </div>
+      <button>S'INSCRIRE</button>
     </div>
   );
 };

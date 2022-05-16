@@ -1,6 +1,6 @@
 @import '../../styles/theme-variables.css';
 
-main h1 {
+.home-title {
   background-image: url('../../styles/images/fruitsveggies.png');
   background-repeat: no-repeat;
   background-size: cover;
@@ -11,17 +11,14 @@ main h1 {
   font-size: 70px;
   font-weight: 400;
 }
-section {
-  width: 75%;
-  margin: auto;
-}
-.first-section {
+.first-section-home {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 40px;
-  margin-top: 50px;
+  width: 75%;
+  margin: 50px auto 0;
 }
-.first-section div {
+.first-section-home div {
   display: grid;
   align-items: center;
   justify-content: center;
@@ -29,16 +26,18 @@ section {
   background-image: url('../../styles/images/pano_fruitsveggies_lessOpacity.png');
   border-radius: 10px;
 }
-.first-section div img {
+.first-section-home div img {
   margin: auto;
   transform: scale(0.7);
 }
-.first-section div p {
+.first-section-home div p {
   text-align: center;
   padding: 20px;
 }
-.second-section {
+.second-section-home {
   text-align: justify;
+  width: 75%;
+  margin: auto;
 }
 h2 {
   text-align: center;

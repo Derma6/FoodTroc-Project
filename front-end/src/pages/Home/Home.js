@@ -12,8 +12,8 @@ import Separator from '../../components/Separator/Separator';
 const Home = () => {
   return (
     <main>
-      <h1>Echanger vos récoltes !</h1>
-      <section className="first-section">
+      <h1 className="home-title">Echanger vos récoltes !</h1>
+      <section className="first-section-home">
         <div>
           <img src={login} alt={`logo login`} />
           <p>Identifiez-vous</p>
@@ -32,7 +32,7 @@ const Home = () => {
         </div>
       </section>
       <Separator />
-      <section className="second-section">
+      <section className="second-section-home">
         <h2>Nos valeurs</h2>
         <p>
           Je clique, je troque ! En seulement 2 clics, FOOD TROC offre aux

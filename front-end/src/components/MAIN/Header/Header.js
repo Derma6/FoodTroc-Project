@@ -10,19 +10,19 @@ const Header = () => {
         <img src={Logo} alt={'foodtroc logo'} width={`250px`} />
       </Link>
       <nav>
-        <NavLink activeClassName="active" to="/">
+        <NavLink activeclassname="active" to="/">
           Accueil
         </NavLink>
-        <NavLink activeClassName="active" to="/commentcamarche">
+        <NavLink activeclassname="active" to="/commentcamarche">
           Comment ça marche ?
         </NavLink>
-        <NavLink activeClassName="active" to="/troquez">
+        <NavLink activeclassname="active" to="/troquez">
           Troquez !
         </NavLink>
-        <NavLink activeClassName="active" to="/blog">
+        <NavLink activeclassname="active" to="/blog">
           Blog
         </NavLink>
-        <NavLink activeClassName="active" to="/contact">
+        <NavLink activeclassname="active" to="/contact">
           Contact
         </NavLink>
       </nav>

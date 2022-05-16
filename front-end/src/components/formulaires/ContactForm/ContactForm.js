@@ -1,46 +1,42 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import  SeparatorLessMargin from '../../SeparatorLessMargin/SeparatorLessMargin'
 
-//----------------------IMPORT MUI----------------------//
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
+
+import './ContactForm.css'
 
 const Contact = ({ user }) => {
   if (user) {
     return (
-      <>
+      <div className="contact-form">
         <h1>Contact</h1>
-        <TextField id="object" label="OBJET DU MESSAGE" variant="outlined" />
-        <TextField
-          id="message"
-          label="VOTRE MESSAGE..."
-          multiline
-          rows={10}
-          variant="outlined"
-        />
-        <Button>ENVOYER</Button>
-      </>
-    );
-  } else {
-    return (
-      <>
-        <h1>Contact</h1>
+        <SeparatorLessMargin />
         <p>
           Vous avez un compte ? <Link to="/login">Connectez-vous</Link>
         </p>
-        <TextField id="name" label="PRÉNOM" variant="outlined" />
-        <TextField id="email" label="EMAIL" variant="outlined" />
-        <TextField id="object" label="OBJET DU MESSAGE" variant="outlined" />
-        <TextField
-          id="message"
-          label="VOTRE MESSAGE"
-          multiline
-          minRows={10}
-          maxRows={10}
-          variant="outlined"
-        />
-        <Button>ENVOYER</Button>
-      </>
+        <div className="inputs">
+          <input placeholder="OBJET DU MESSAGE"/>
+          <textarea rows="10" placeholder="VOTRE MESSAGE"></textarea>
+        </div>
+        <button>ENVOYER</button>
+      </div>
+    );
+  } else {
+    return (
+      <div className="contact-form">
+        <h1>Contact</h1>
+        <SeparatorLessMargin />
+        <p>
+          Vous avez un compte ? <Link to="/login">Connectez-vous</Link>
+        </p>
+        <div className="inputs">
+          <input placeholder="PRÉNOM"/>
+          <input placeholder="EMAIL"/>
+          <input placeholder="OBJET DU MESSAGE"/>
+          <textarea rows="10" placeholder="VOTRE MESSAGE"></textarea>
+        </div>
+        <button>ENVOYER</button>
+      </div>
     );
   }
 };

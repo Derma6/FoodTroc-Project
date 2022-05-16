@@ -26,6 +26,10 @@ nav a {
   border-bottom: solid 5px var(--primary-color);
 }
 
+nav a:hover {
+  color: var(--primary-color);
+}
+
 @media all and (max-width: 1200px) {
   nav a {
     margin: 15px;

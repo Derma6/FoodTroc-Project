@@ -7,6 +7,8 @@ import users from '../../styles/images/users.png';
 
 import './Home.css';
 
+import Separator from '../../components/Separator/Separator';
+
 const Home = () => {
   return (
     <main>
@@ -29,7 +31,7 @@ const Home = () => {
           <p>Troquez !</p>
         </div>
       </section>
-      <div className="separator"></div>
+      <Separator />
       <section className="second-section">
         <h2>Nos valeurs</h2>
         <p>
@@ -46,7 +48,7 @@ const Home = () => {
           produits maison issus de leur propre récolte.
         </p>
       </section>
-      <div className="separator"></div>
+      <Separator />
     </main>
   );
 };

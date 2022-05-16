@@ -1,0 +1,44 @@
+footer a {
+    color: white;
+}
+
+.social-text {
+    background-color: #281D1D;
+    background-image: url("../../../styles/images/pano_fruitsveggies.png");
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20%;
+    padding: 0.5%;
+    height: 10vh;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+}
+
+.social {
+    display: flex;
+    height: 6vh;
+    gap: 25%;
+}
+
+.social img {
+   transform: scale(0.8) 
+}
+
+.legal-text {
+    display: flex;
+    gap: 25%;
+}
+
+.footer-text {
+    font-size: 1.5em;
+    background-color: #ED3A03;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5vh;
+}

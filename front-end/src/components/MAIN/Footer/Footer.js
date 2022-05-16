@@ -1,6 +1,7 @@
 import React from 'react';
 import 'material-icons/iconfont/material-icons.css';
 import { Link } from 'react-router-dom';
+import './Footer.css'
 
 const Footer = () => {
   return (
@@ -15,11 +16,11 @@ const Footer = () => {
           <Link to="/contact">CONTACT</Link>
           {/* <Link to="/cgv">CGV</Link> */}
           {/* <Link to="/cookies">COOKIES</Link> */}
-          <Link to="/blog">Blog</Link>
+          <Link to="/blog">BLOG</Link>
         </div>
       </div>
       <div className="footer-text">
-        <p>DES FRUITS ET DES LEGUMES FRAIS TOUTE L'ANNEE</p>
+        <p>DES FRUITS ET DES LEGUMES FRAIS TOUTE L'ANNEE !</p>
       </div>
     </footer>
   );

@@ -1,9 +1,23 @@
 import React from 'react';
 import ProductCard from '../../components/ProductCard/ProductCard'
+import './Troc.css'
 
 const Troc = () => {
   return (
-    <div>
+    <div className="troc">
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
       <ProductCard />
     </div>
     );

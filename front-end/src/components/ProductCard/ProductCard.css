@@ -1,5 +1,11 @@
 .product-card {
-    width: 60vw;
+    background-color: white;
+    padding: 5%;
+    border-radius: 20px;
+    width: 15vw;
+    height: 22vh;
+    background-image: url("../../styles/images/pano_fruitsveggies_lessOpacity.png");
+    margin-bottom: 5%;
 }
 
 .product-info {
@@ -14,15 +20,27 @@
 }
 
 .product-info img {
-    width: 8vw;
+    width: 4vw;
 }
 
 .product-footer {
     display: flex;
-    gap: 30%;
+    gap: 40%;
 }
 
 .location {
     display: flex;
     align-items: center;
+}
+
+.product-card button {
+    border: none;
+    background-color: #ED3A03;
+    color: white;
+    border-radius: 15px;
+}
+
+.product-card button:hover {
+    background-color: #83be21;
+    cursor: pointer;
 }

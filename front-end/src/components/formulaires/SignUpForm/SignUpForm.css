@@ -1,0 +1,25 @@
+.signUp-form {
+  background-color: lightgrey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 35vw;
+  border-radius: 15px;
+  padding: 1.5% 3% 1.5% 3%;
+}
+
+.inputs input {
+  height: 4.5vh;
+  padding-left: 5%;
+  border: 1.5px solid black;
+  border-radius: 8px;
+  margin: 10px;
+}
+
+.signUp-form button {
+  padding: 10px 30px;
+  margin: 15px;
+  border: none;
+  color: white;
+  background-color: #ed3a03;
+}

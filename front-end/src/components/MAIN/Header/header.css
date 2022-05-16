@@ -1,3 +1,5 @@
+@import '../../../styles/theme-variables.css';
+
 header {
   display: grid;
   align-items: end;
@@ -20,8 +22,8 @@ nav a {
   font-weight: 500;
 }
 .active {
-  color: green;
-  border-bottom: solid 3px green;
+  color: var(--primary-color);
+  border-bottom: solid 5px var(--primary-color);
 }
 
 @media all and (max-width: 1200px) {

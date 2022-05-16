@@ -1,0 +1,9 @@
+.contact {
+    background-image: url("../../styles/images/background_fruitsveggies.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

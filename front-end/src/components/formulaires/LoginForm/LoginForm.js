@@ -1,9 +1,25 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { auth, signInWithEmailAndPassword } from "../../../firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 import './LoginForm.css';
 import SeparatorLessMargin from '../../SeparatorLessMargin/SeparatorLessMargin';
 
+
 const LoginForm = () => {
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [user, loading, error] = useAuthState(auth);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (loading) {
+      // maybe trigger a loading screen
+      return;
+    }
+    if (user) navigate("/login");
+  }, [user, loading]);
   return (
     <div className="login-form">
       <h1>Connexion</h1>
@@ -15,11 +31,15 @@ const LoginForm = () => {
         </Link>
       </p>
       <div className="inputs">
-        <input placeholder="EMAIL" />
-        <input rows="10" placeholder="MOT DE PASSE"></input>
+        <input placeholder="EMAIL" value={email} onChange={(e) => setEmail(e.target.value)} />
+        <input 
+          value={password}
+          onChange={(e) => setPassword(e.target.value)} 
+          placeholder="MOT DE PASSE"
+        ></input>
       </div>
       <div className="login-lost">
-        <button>SE CONNECTER</button>
+        <button onClick={() => signInWithEmailAndPassword(email, password)}>SE CONNECTER</button>
         <Link className="lost" to="/">
           Mot de passe oublié ?
         </Link>

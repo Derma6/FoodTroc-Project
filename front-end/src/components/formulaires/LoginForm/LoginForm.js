@@ -5,7 +5,7 @@ import {
   signInWithEmailAndPassword,
 } from '../../../utilities/firebase';
 
-import '../../../styles/forms.css'
+import '../../../styles/forms.css';
 import SeparatorLessMargin from '../../SeparatorLessMargin/SeparatorLessMargin';
 
 import { UserContext } from '../../../utilities/Context';
@@ -15,14 +15,14 @@ const LoginForm = () => {
   const [password, setPassword] = useState('');
 
   const { user, updateUser } = useContext(UserContext);
+  useEffect(() => {
+    console.log(user);
+  }, [user]);
 
   async function getUser(uid, token) {
-    console.log(uid);
     const response = await fetch(`http://localhost:3001/users/${uid}`);
     const data = await response.json();
-    console.log(user);
     updateUser({ ...data, token });
-    console.log(user);
   }
 
   function logIn() {
@@ -62,7 +62,12 @@ const LoginForm = () => {
         ></input>
       </div>
       <div className="login-lost">
-        <button className="validate-form" onClick={() => logIn(email, password)}>SE CONNECTER</button>
+        <button
+          className="validate-form"
+          onClick={() => logIn(email, password)}
+        >
+          SE CONNECTER
+        </button>
         <Link className="lost" to="/">
           Mot de passe oublié ?
         </Link>

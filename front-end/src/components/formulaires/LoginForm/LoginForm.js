@@ -1,25 +1,42 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { auth, logInWithEmailAndPassword } from '../../../utilities/firebase';
-import { useAuthState } from 'react-firebase-hooks/auth';
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+} from '../../../utilities/firebase';
+
 import './LoginForm.css';
 import SeparatorLessMargin from '../../SeparatorLessMargin/SeparatorLessMargin';
+
+import { UserContext } from '../../../utilities/Context';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [user, loading, error] = useAuthState(auth);
-  const navigate = useNavigate();
 
-  console.log(user);
+  const { user, updateUser } = useContext(UserContext);
 
-  useEffect(() => {
-    if (loading) {
-      // maybe trigger a loading screen
-      return;
-    }
-    if (user) navigate('/login');
-  }, [user, loading]);
+  // useEffect(() => {
+  //   if (loading) {
+  //     // maybe trigger a loading screen
+  //     return;
+  //   }
+  //   if (user) navigate('/login');
+  // }, [user, loading]);
+
+  function logIn() {
+    const auth = getAuth();
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const uid = userCredential.user.uid;
+        const token = userCredential.user.accessToken;
+        updateUser({ uid, token });
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      });
+  }
 
   return (
     <div className="login-form">
@@ -44,9 +61,7 @@ const LoginForm = () => {
         ></input>
       </div>
       <div className="login-lost">
-        <button onClick={() => logInWithEmailAndPassword(email, password)}>
-          SE CONNECTER
-        </button>
+        <button onClick={() => logIn(email, password)}>SE CONNECTER</button>
         <Link className="lost" to="/">
           Mot de passe oublié ?
         </Link>

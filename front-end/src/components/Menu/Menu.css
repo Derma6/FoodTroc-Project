@@ -1,0 +1,15 @@
+.menu {
+  background-color: white;
+  border-radius: 10px;
+  /* text-align: center; */
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 10px;
+  top: 125px;
+  padding: 20px;
+}
+.menu-info-user {
+  display: flex;
+  flex-direction: column;
+}

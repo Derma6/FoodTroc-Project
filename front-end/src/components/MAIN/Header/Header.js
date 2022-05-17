@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import Logo from '../../../styles/images/foodtroc_logo.png';
 
 import { UserContext } from '../../../utilities/Context';
+import Menu from '../../Menu/Menu';
 
 import './header.css';
 
@@ -32,7 +33,10 @@ const Header = () => {
         </NavLink>
       </nav>
       {user ? (
-        <h2>Mon potager</h2>
+        <>
+          <h2>Mon potager</h2>
+          <Menu />
+        </>
       ) : (
         <Link to="/login" className="login-button">
           Connexion

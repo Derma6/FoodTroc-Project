@@ -23,28 +23,39 @@ import Error from '../Error/Error';
 import Header from '../../components/MAIN/Header/Header';
 import Footer from '../../components/MAIN/Footer/Footer';
 
+//--------------------IMPORT CONTEXT--------------------//
+
+import { UserContext } from '../../../utilities/Context';
+
 function App() {
   const [user, updateUser] = useState();
 
   return (
     <div className="App">
       <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/login" element={<Login />}></Route>
-          <Route path="/signUp" element={<SignUp />}></Route>
-          <Route path="/contact" element={<Contact user={user} />}></Route>
-          <Route path="/blog" element={<Blog />}></Route>
-          <Route path="/blog/:article" element={<BlogArticle />}></Route>
-          <Route path="/commentcamarche" element={<HowTo />}></Route>
-          <Route path="/troquez" element={<Troc />}></Route>
-          <Route path="/stock" element={<Stock />}></Route>
-          <Route path="/stock/add" element={<StockAdd />}></Route>
-          <Route path="/potager/parametres" element={<Settings />}></Route>
-          <Route path="*" element={<Error />}></Route>
-        </Routes>
-        <Footer />
+        <UserContext.Provider
+          value={{
+            user,
+            updateUser,
+          }}
+        >
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/login" element={<Login />}></Route>
+            <Route path="/signUp" element={<SignUp />}></Route>
+            <Route path="/contact" element={<Contact user={user} />}></Route>
+            <Route path="/blog" element={<Blog />}></Route>
+            <Route path="/blog/:article" element={<BlogArticle />}></Route>
+            <Route path="/commentcamarche" element={<HowTo />}></Route>
+            <Route path="/troquez" element={<Troc />}></Route>
+            <Route path="/stock" element={<Stock />}></Route>
+            <Route path="/stock/add" element={<StockAdd />}></Route>
+            <Route path="/potager/parametres" element={<Settings />}></Route>
+            <Route path="*" element={<Error />}></Route>
+          </Routes>
+          <Footer />
+        </UserContext.Provider>
       </BrowserRouter>
     </div>
   );

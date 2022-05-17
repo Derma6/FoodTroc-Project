@@ -31,10 +31,13 @@ const Header = () => {
           Contact
         </NavLink>
       </nav>
-      <Link to="/login" className="login-button">
-        Connexion
-      </Link>
-      {user ? <h2>Bonjour {user.name}</h2> : <p>Connectez vous</p>}
+      {user ? (
+        <Link to="/login" className="login-button">
+          Connexion
+        </Link>
+      ) : (
+        <p>Mon potager</p>
+      )}
     </header>
   );
 };

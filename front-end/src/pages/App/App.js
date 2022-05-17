@@ -25,10 +25,10 @@ import Footer from '../../components/MAIN/Footer/Footer';
 
 //--------------------IMPORT CONTEXT--------------------//
 
-import { UserContext } from '../../../utilities/Context';
+import { UserContext } from '../../utilities/Context';
 
 function App() {
-  const [user] = useState();
+  const [user, updateUser] = useState();
 
   return (
     <div className="App">

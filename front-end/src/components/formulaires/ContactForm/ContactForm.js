@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import  SeparatorLessMargin from '../../SeparatorLessMargin/SeparatorLessMargin'
 
 
-import './ContactForm.css'
+import '../../../styles/forms.css'
 
 const Contact = ({ user }) => {
   if (user) {
     return (
-      <div className="contact-form">
+      <div className="form">
         <h1>Contact</h1>
         <SeparatorLessMargin />
         <p>
@@ -23,7 +23,7 @@ const Contact = ({ user }) => {
     );
   } else {
     return (
-      <div className="contact-form">
+      <div className="form">
         <h1>Contact</h1>
         <SeparatorLessMargin />
         <p>
@@ -35,7 +35,7 @@ const Contact = ({ user }) => {
           <input placeholder="OBJET DU MESSAGE"/>
           <textarea rows="10" placeholder="VOTRE MESSAGE"></textarea>
         </div>
-        <button>ENVOYER</button>
+        <button className="validate-form">ENVOYER</button>
       </div>
     );
   }

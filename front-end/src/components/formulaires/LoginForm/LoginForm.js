@@ -5,7 +5,7 @@ import {
   signInWithEmailAndPassword,
 } from '../../../utilities/firebase';
 
-import './LoginForm.css';
+import '../../../styles/forms.css'
 import SeparatorLessMargin from '../../SeparatorLessMargin/SeparatorLessMargin';
 
 import { UserContext } from '../../../utilities/Context';
@@ -40,12 +40,12 @@ const LoginForm = () => {
   }
 
   return (
-    <div className="login-form">
+    <div className="form">
       <h1>Connexion</h1>
       <SeparatorLessMargin />
       <p>
         Pas encore inscrit ?{' '}
-        <Link className="joinUs" to="/signUp">
+        <Link className="join-us" to="/signUp">
           Rejoignez-nous !
         </Link>
       </p>
@@ -62,7 +62,7 @@ const LoginForm = () => {
         ></input>
       </div>
       <div className="login-lost">
-        <button onClick={() => logIn(email, password)}>SE CONNECTER</button>
+        <button className="validate-form" onClick={() => logIn(email, password)}>SE CONNECTER</button>
         <Link className="lost" to="/">
           Mot de passe oublié ?
         </Link>

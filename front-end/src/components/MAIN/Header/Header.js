@@ -24,9 +24,9 @@ const Header = () => {
         <NavLink activeclassname="active" to="/troquez">
           Troquez !
         </NavLink>
-        <NavLink activeclassname="active" to="/blog">
+        {/* <NavLink activeclassname="active" to="/blog">
           Blog
-        </NavLink>
+        </NavLink> */}
         <NavLink activeclassname="active" to="/contact">
           Contact
         </NavLink>

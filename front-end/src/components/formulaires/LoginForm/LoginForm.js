@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import {
-  auth,
-  signInWithEmailAndPassword,
-} from '../../../utilities/firebaseConfig';
+import { auth, logInWithEmailAndPassword } from '../../../firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import './LoginForm.css';
 import SeparatorLessMargin from '../../SeparatorLessMargin/SeparatorLessMargin';
@@ -47,7 +44,7 @@ const LoginForm = () => {
         ></input>
       </div>
       <div className="login-lost">
-        <button onClick={() => signInWithEmailAndPassword(email, password)}>
+        <button onClick={() => logInWithEmailAndPassword(email, password)}>
           SE CONNECTER
         </button>
         <Link className="lost" to="/">

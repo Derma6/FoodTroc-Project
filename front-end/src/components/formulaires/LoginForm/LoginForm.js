@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { auth, logInWithEmailAndPassword } from '../../../firebase';
+import { auth, logInWithEmailAndPassword } from '../../../utilities/firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import './LoginForm.css';
 import SeparatorLessMargin from '../../SeparatorLessMargin/SeparatorLessMargin';

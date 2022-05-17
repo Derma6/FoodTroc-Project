@@ -24,7 +24,7 @@ import Header from '../../components/MAIN/Header/Header';
 import Footer from '../../components/MAIN/Footer/Footer';
 
 function App() {
-  const [user, updateUser] = useState();
+  const [user] = useState();
 
   return (
     <div className="App">

@@ -8,9 +8,9 @@ const Footer = () => {
     <footer>
       <div className="social-text">
         <div className="social">
-          <img src={require('./Facebook_green.png')} />
-          <img src={require('./Instagram_green.png')} />
-          <img src={require('./twitter_green.png')} />
+          <Link to="https://www.facebook.com"><img src={require('./Facebook_green.png')} alt={"facebook logo"}/></Link>
+          <Link to="https://www.instagram.com"><img alt={"instagram logo"} src={require('./Instagram_green.png')} /></Link>
+          <Link to="https://www.twitter.com"><img alt={"twitter logo"} src={require('./twitter_green.png')} /></Link>
         </div>
         <div className="legal-text">
           <Link to="/contact">CONTACT</Link>

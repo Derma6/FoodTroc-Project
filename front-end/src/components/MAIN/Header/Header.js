@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import Logo from '../../../styles/images/foodtroc_logo.png';
+
+import { UserContext } from '../../../utilities/Context';
+
 import './header.css';
 
 const Header = () => {
+  const { user } = useContext(UserContext);
+
   return (
     <header>
       <Link to="/">

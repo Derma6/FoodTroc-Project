@@ -9,7 +9,7 @@ import { UserContext } from '../../../utilities/Context';
 import SeparatorLessMargin from '../../SeparatorLessMargin/SeparatorLessMargin';
 
 //--------------------IMPORT CSS--------------------//
-import './SignUpForm.css';
+import '../../../styles/forms.css'
 
 const SignUpFom = () => {
   const [name, setName] = useState();
@@ -34,7 +34,7 @@ const SignUpFom = () => {
   }
 
   return (
-    <div className="signUp-form">
+    <div className="form">
       <h1>Inscription</h1>
       <SeparatorLessMargin />
       <div className="inputs">
@@ -64,7 +64,7 @@ const SignUpFom = () => {
           placeholder="LOCALISATION DE VOTRE POTAGER"
         />
       </div>
-      <button onClick={() => signUp(setLoading)}>S'INSCRIRE</button>
+      <button className="validate-form" onClick={() => signUp(setLoading)}>S'INSCRIRE</button>
     </div>
   );
 };

@@ -32,11 +32,11 @@ const Header = () => {
         </NavLink>
       </nav>
       {user ? (
+        <h2>Mon potager</h2>
+      ) : (
         <Link to="/login" className="login-button">
           Connexion
         </Link>
-      ) : (
-        <p>Mon potager</p>
       )}
     </header>
   );

@@ -13,7 +13,7 @@ import { easyPOST } from '../../../utilities/easyFetch';
 import SeparatorLessMargin from '../../SeparatorLessMargin/SeparatorLessMargin';
 
 //--------------------IMPORT CSS--------------------//
-import '../../../styles/forms.css'
+import '../../../styles/forms.css';
 
 const SignUpFom = () => {
   const [name, setName] = useState();
@@ -21,9 +21,14 @@ const SignUpFom = () => {
   const [password, setPassword] = useState();
   const [passwordC, setPasswordC] = useState();
   const [location, setLocation] = useState();
+
   const [isLoading, setLoading] = useState(false);
 
   const { user, updateUser } = useContext(UserContext);
+
+  useEffect(() => {
+    console.log(user);
+  }, [user]);
 
   function signUp() {
     const auth = getAuth();
@@ -32,7 +37,7 @@ const SignUpFom = () => {
         const uid = userCredential.user.uid;
         const token = userCredential.user.accessToken;
         const newUser = { uid, name, email, location };
-        easyPOST(newUser, `http://localhost:3001/users`, user.token);
+        easyPOST(newUser, `http://localhost:3001/users`, token);
         updateUser({ ...newUser, token });
       })
       .catch((error) => {
@@ -72,8 +77,9 @@ const SignUpFom = () => {
           placeholder="LOCALISATION DE VOTRE POTAGER"
         />
       </div>
-      <button className="validate-form" onClick={() => signUp(setLoading)}>S'INSCRIRE</button>
-
+      <button className="validate-form" onClick={() => signUp()}>
+        S'INSCRIRE
+      </button>
     </div>
   );
 };

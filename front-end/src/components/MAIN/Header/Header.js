@@ -34,6 +34,7 @@ const Header = () => {
       <Link to="/login" className="login-button">
         Connexion
       </Link>
+      {user ? <h2>Bonjour {user.name}</h2> : <p>Connectez vous</p>}
     </header>
   );
 };

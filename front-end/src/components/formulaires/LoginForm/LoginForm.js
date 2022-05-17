@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {
   getAuth,
   signInWithEmailAndPassword,
@@ -16,13 +16,14 @@ const LoginForm = () => {
 
   const { user, updateUser } = useContext(UserContext);
 
-  // useEffect(() => {
-  //   if (loading) {
-  //     // maybe trigger a loading screen
-  //     return;
-  //   }
-  //   if (user) navigate('/login');
-  // }, [user, loading]);
+  async function getUser(uid, token) {
+    console.log(uid);
+    const response = await fetch(`http://localhost:3001/users/${uid}`);
+    const data = await response.json();
+    console.log(user);
+    updateUser({ ...data, token });
+    console.log(user);
+  }
 
   function logIn() {
     const auth = getAuth();
@@ -30,7 +31,7 @@ const LoginForm = () => {
       .then((userCredential) => {
         const uid = userCredential.user.uid;
         const token = userCredential.user.accessToken;
-        updateUser({ uid, token });
+        getUser(uid, token);
       })
       .catch((error) => {
         const errorCode = error.code;

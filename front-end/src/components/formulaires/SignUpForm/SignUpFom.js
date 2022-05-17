@@ -2,8 +2,12 @@ import React, { useContext, useEffect, useState } from 'react';
 
 //--------------------IMPORT CONTEXT--------------------//
 import { UserContext } from '../../../utilities/Context';
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+} from '../../../utilities/firebase';
 
-// import { easyPOST } from '../../../../utilities/easyFetch';
+import { easyPOST } from '../../../utilities/easyFetch';
 
 //--------------------IMPORT COMPONENTS--------------------//
 import SeparatorLessMargin from '../../SeparatorLessMargin/SeparatorLessMargin';
@@ -21,16 +25,20 @@ const SignUpFom = () => {
 
   const { user, updateUser } = useContext(UserContext);
 
-  useEffect(() => {
-    console.log(name);
-  }, [name]);
-
-  function signUp(setLoading) {
-    const newUser = { name, email, location };
-
-    console.log(newUser);
-
-    // easyPOST(newUser, `http://localhost:3001/users/create`, token)
+  function signUp() {
+    const auth = getAuth();
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const uid = userCredential.user.uid;
+        const token = userCredential.user.accessToken;
+        const newUser = { uid, name, email, location };
+        easyPOST(newUser, `http://localhost:3001/users`, user.token);
+        updateUser({ ...newUser, token });
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      });
   }
 
   return (
@@ -65,6 +73,7 @@ const SignUpFom = () => {
         />
       </div>
       <button className="validate-form" onClick={() => signUp(setLoading)}>S'INSCRIRE</button>
+
     </div>
   );
 };

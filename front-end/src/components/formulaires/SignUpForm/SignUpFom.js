@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 
 //--------------------IMPORT CONTEXT--------------------//
-import { UserContext } from '../../../../utilities/Context';
+import { UserContext } from '../../../utilities/Context';
 
 // import { easyPOST } from '../../../../utilities/easyFetch';
 

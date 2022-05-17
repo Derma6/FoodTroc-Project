@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { auth, signInWithEmailAndPassword } from "../../../firebase";
+import { getAuth, auth, logInWithEmailAndPassword } from "../../../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import './LoginForm.css';
 import SeparatorLessMargin from '../../SeparatorLessMargin/SeparatorLessMargin';
@@ -14,11 +14,11 @@ const LoginForm = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (loading) {
-      // maybe trigger a loading screen
-      return;
-    }
-    if (user) navigate("/login");
+    // if (loading) {
+    //   // loading screen
+    //   return;
+    // }
+    // if (user) navigate("/");
   }, [user, loading]);
   return (
     <div className="login-form">
@@ -39,7 +39,7 @@ const LoginForm = () => {
         ></input>
       </div>
       <div className="login-lost">
-        <button onClick={() => signInWithEmailAndPassword(email, password)}>SE CONNECTER</button>
+        <button onClick={() => logInWithEmailAndPassword(email, password)}>SE CONNECTER</button>
         <Link className="lost" to="/">
           Mot de passe oublié ?
         </Link>

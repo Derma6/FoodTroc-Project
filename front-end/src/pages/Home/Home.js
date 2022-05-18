@@ -12,7 +12,7 @@ import Separator from '../../components/Separator/Separator';
 const Home = () => {
   return (
     <main>
-      <h1 className="home-title">Echanger vos récoltes !</h1>
+      <h1 className="home-title">Echangez vos récoltes !</h1>
       <section className="first-section-home">
         <div>
           <img src={login} alt={`logo login`} />

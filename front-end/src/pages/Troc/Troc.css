@@ -3,10 +3,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     justify-items: center;
-    gap: 1%;
-    padding: 2%;
-    margin: 0 2% 0 2%;
+    padding: 8% 5% 8% 5%;
 }
 

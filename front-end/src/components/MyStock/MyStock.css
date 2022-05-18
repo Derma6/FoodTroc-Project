@@ -1,0 +1,15 @@
+.my-stock {
+    background-color: white;
+    background-image: url('../../styles/images/pano_fruitsveggies_lessOpacity.png');
+    border-radius: 15px;
+    padding: 1.5% 3% 1.5% 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stock-products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3%;
+}

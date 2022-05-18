@@ -15,7 +15,7 @@ const LoginForm = () => {
   const [password, setPassword] = useState('');
   const [loginError, setLoginError] = useState()
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const { user, updateUser } = useContext(UserContext);
   // useEffect(() => {
   //   console.log(user);
@@ -28,8 +28,6 @@ const LoginForm = () => {
   }
 
   function logIn() {
-
-    
     const auth = getAuth();
 
     signInWithEmailAndPassword(auth, email, password)
@@ -37,7 +35,7 @@ const LoginForm = () => {
         const uid = userCredential.user.uid;
         const token = userCredential.user.accessToken;
         getUser(uid, token);
-        return uid
+        return uid;
       })
       .then((uid) => {
         uid && (
@@ -50,7 +48,6 @@ const LoginForm = () => {
         const errorMessage = error.message;
         setLoginError(true)
       });
-
   }
 
   return (
@@ -65,11 +62,13 @@ const LoginForm = () => {
       </p>
       <div className="inputs">
         <input
+          type="email"
           placeholder="EMAIL"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
+          type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="MOT DE PASSE"

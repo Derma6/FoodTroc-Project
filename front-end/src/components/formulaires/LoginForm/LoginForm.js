@@ -14,7 +14,7 @@ const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const { user, updateUser } = useContext(UserContext);
   // useEffect(() => {
   //   console.log(user);
@@ -27,8 +27,6 @@ const LoginForm = () => {
   }
 
   function logIn() {
-
-    
     const auth = getAuth();
 
     signInWithEmailAndPassword(auth, email, password)
@@ -36,24 +34,22 @@ const LoginForm = () => {
         const uid = userCredential.user.uid;
         const token = userCredential.user.accessToken;
         getUser(uid, token);
-        return uid
+        return uid;
       })
       .then((uid) => {
-        uid ? (
-          navigate('/', { replace: true })
-        ) : (
-          navigate("../login", { replace: true })
-        )
+        uid
+          ? navigate('/', { replace: true })
+          : navigate('../login', { replace: true });
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
       });
-      
-      // .catch((error) => {
-      //   const errorCode = error.code;
-      //   const errorMessage = error.message;
-      // });
+
+    // .catch((error) => {
+    //   const errorCode = error.code;
+    //   const errorMessage = error.message;
+    // });
   }
 
   return (
@@ -68,11 +64,13 @@ const LoginForm = () => {
       </p>
       <div className="inputs">
         <input
+          type="email"
           placeholder="EMAIL"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
+          type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="MOT DE PASSE"

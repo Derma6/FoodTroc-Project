@@ -1,0 +1,8 @@
+.settings {
+  background-image: url(../../styles/images/background_fruitsveggies.webp);
+  height: 80vh;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

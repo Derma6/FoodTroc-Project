@@ -63,7 +63,7 @@ function App() {
             <Route path="/troquez" element={<Troc />}></Route>
             <Route path="/stock" element={<Stock />}></Route>
             <Route path="/stock/add" element={<StockAdd />}></Route>
-            <Route path="/potager/parametres" element={<Settings />}></Route>
+            <Route path="/parametres" element={<Settings />}></Route>
             <Route path="*" element={<Error />}></Route>
           </Routes>
           <Footer />

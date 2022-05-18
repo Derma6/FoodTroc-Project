@@ -52,26 +52,31 @@ const SignUpFom = () => {
       <SeparatorLessMargin />
       <div className="inputs">
         <input
+          type="text"
           onChange={(e) => setName(e.target.value)}
           id="name"
           placeholder="PRÉNOM"
         />
         <input
+          type="email"
           onChange={(e) => setEmail(e.target.value)}
           id="email"
           placeholder="EMAIL"
         />
         <input
+          type="password"
           onChange={(e) => setPassword(e.target.value)}
           id="password"
           placeholder="MOT DE PASSE"
         />
         <input
+          type="password"
           onChange={(e) => setPasswordC(e.target.value)}
           id="passwordCONFIRM"
           placeholder="COMFIRMER MOT DE PASSE"
         />
         <input
+          type="text"
           onChange={(e) => setLocation(e.target.value)}
           id="location"
           placeholder="LOCALISATION DE VOTRE POTAGER"

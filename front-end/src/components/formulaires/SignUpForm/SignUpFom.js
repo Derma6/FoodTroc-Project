@@ -23,12 +23,13 @@ const SignUpFom = () => {
   const [location, setLocation] = useState();
 
   const [isLoading, setLoading] = useState(false);
+  const [signInError, setSignInError] = useState()
 
   const { user, updateUser } = useContext(UserContext);
 
-  useEffect(() => {
-    console.log(user);
-  }, [user]);
+  // useEffect(() => {
+  //   console.log(user);
+  // }, [user]);
 
   function signUp() {
     const auth = getAuth();
@@ -43,6 +44,7 @@ const SignUpFom = () => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        setSignInError(true)
       });
   }
 
@@ -77,6 +79,9 @@ const SignUpFom = () => {
           placeholder="LOCALISATION DE VOTRE POTAGER"
         />
       </div>
+      {
+        signInError && <h4 style={{margin: "3% 0 0% 0", color: "darkgreen"}}>Veuillez vérifier vos informations</h4>
+      }
       <button className="validate-form" onClick={() => signUp()}>
         S'INSCRIRE
       </button>

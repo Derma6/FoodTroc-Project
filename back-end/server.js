@@ -27,6 +27,15 @@ mongoose.connect(url, (err, db) => {
   require('./routes/User/findAllUser')(app);
   require('./routes/User/modifyUser')(app);
   require('./routes/User/findUserByUid')(app);
+
+
+  //-----------------------------PRODUCT------------------------------//
+  require('./routes/Product/createProduct')(app);
+  require('./routes/Product/deleteProduct')(app);
+  require('./routes/Product/findAllProduct')(app);
+  require('./routes/Product/modifyProduct')(app);
+  require('./routes/Product/findProductByUid')(app);
+
 });
 
 app.listen(port);

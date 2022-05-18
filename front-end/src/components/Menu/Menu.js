@@ -1,12 +1,21 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../utilities/Context';
+import { auth, signOut } from '../../utilities/firebase';
 import SeparatorLessMargin from '../SeparatorLessMargin/SeparatorLessMargin';
 
 import './Menu.css';
 
 const Menu = () => {
-  const { user } = useContext(UserContext);
+  const { user, updateUser } = useContext(UserContext);
+
+  function logOut() {
+    signOut(auth)
+      .then(() => {
+        updateUser(false);
+      })
+      .catch((error) => {});
+  }
 
   return (
     <div className="menu">
@@ -19,7 +28,7 @@ const Menu = () => {
       <SeparatorLessMargin />
       <Link to="/parametres">Paramètres</Link>
       <Link to="/stock">Mon stock</Link>
-      <button>SE DÉCONNECTER</button>
+      <button onClick={() => logOut()}>SE DÉCONNECTER</button>
     </div>
   );
 };

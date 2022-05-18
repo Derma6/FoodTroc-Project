@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import Logo from '../../../styles/images/foodtroc_logo.png';
 

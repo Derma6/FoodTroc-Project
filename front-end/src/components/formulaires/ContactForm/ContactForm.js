@@ -1,24 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import  SeparatorLessMargin from '../../SeparatorLessMargin/SeparatorLessMargin'
+import SeparatorLessMargin from '../../SeparatorLessMargin/SeparatorLessMargin';
 
+import '../../../styles/forms.css';
+import { UserContext } from '../../../utilities/Context';
 
-import '../../../styles/forms.css'
+const Contact = () => {
+  const { user } = useContext(UserContext);
 
-const Contact = ({ user }) => {
   if (user) {
     return (
       <div className="form">
         <h1>Contact</h1>
         <SeparatorLessMargin />
-        <p>
-          Vous avez un compte ? <Link to="/login">Connectez-vous</Link>
-        </p>
         <div className="inputs">
-          <input placeholder="OBJET DU MESSAGE"/>
+          <input placeholder="OBJET DU MESSAGE" />
           <textarea rows="10" placeholder="VOTRE MESSAGE"></textarea>
         </div>
-        <button>ENVOYER</button>
+        <button className="validate-form">ENVOYER</button>
       </div>
     );
   } else {
@@ -30,9 +29,9 @@ const Contact = ({ user }) => {
           Vous avez un compte ? <Link to="/login">Connectez-vous</Link>
         </p>
         <div className="inputs">
-          <input placeholder="PRÉNOM"/>
-          <input placeholder="EMAIL"/>
-          <input placeholder="OBJET DU MESSAGE"/>
+          <input placeholder="PRÉNOM" />
+          <input placeholder="EMAIL" />
+          <input placeholder="OBJET DU MESSAGE" />
           <textarea rows="10" placeholder="VOTRE MESSAGE"></textarea>
         </div>
         <button className="validate-form">ENVOYER</button>

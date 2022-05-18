@@ -1,9 +1,11 @@
 import React from 'react';
 import AddProductForm from '../../components/formulaires/AddProductForm.js/AddProductForm';
 
+import './StockAdd.css'
+
 const StockAdd = () => {
   return (
-    <div>
+    <div className="stock-add">
       <AddProductForm />
     </div>
   );

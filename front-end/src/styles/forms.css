@@ -16,13 +16,19 @@
   width: 20vw;
   flex-direction: column;
 }
-.inputs input {
+.inputs input, select {
   /* margin-top: 10%; */
+  background-color: white;
   height: 4.5vh;
   padding-left: 5%;
   border: 1.5px solid black;
   border-radius: 8px;
 }
+
+.select-product {
+  margin-top: 5%;
+}
+
 .form a {
   color: black;
   text-decoration: underline;

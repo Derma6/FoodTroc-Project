@@ -1,0 +1,46 @@
+.container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  margin: 1em;
+}
+.modify-button {
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0);
+  text-decoration: underline;
+}
+.password {
+  background-color: white;
+  box-shadow: 1px 3px 8px black;
+  color: var(--secondary-color);
+  margin-top: 5%;
+  width: 20vw;
+  height: 5vh;
+  cursor: pointer;
+  border: solid var(--secondary-color);
+}
+.delete-account {
+  margin-top: 5%;
+  width: 20vw;
+  height: 5vh;
+  border: none;
+  color: white;
+  background-color: var(--secondary-color);
+  box-shadow: 1px 3px 8px black;
+  cursor: pointer;
+}
+.validate-settings {
+  margin-top: 5%;
+  width: 20vw;
+  height: 5vh;
+  border: none;
+  color: white;
+  background-color: var(--primary-color);
+  box-shadow: 1px 3px 8px black;
+  cursor: pointer;
+}
+.settings-category {
+  font-weight: bold;
+}

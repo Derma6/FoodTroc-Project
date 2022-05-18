@@ -2,7 +2,9 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../utilities/Context';
 import { auth, signOut } from '../../utilities/firebase';
-import SeparatorLessMargin from '../SeparatorLessMargin/SeparatorLessMargin';
+import SeparatorMenu from '../SeparatorMenu/SeparatorMenu';
+
+import jardinnage from '../../styles/images/jardinage.png';
 
 import './Menu.css';
 
@@ -18,17 +20,22 @@ const Menu = () => {
   }
 
   return (
-    <div className="menu">
-      <h3>Mon potager</h3>
-      <SeparatorLessMargin />
-      <div className="menu-info-user">
-        <span className="menu-name">{user.name}</span>
-        <span className="menu-email">{user.email}</span>
+    <div className="menu show-state">
+      <h3 className="menu-title show-state">Mon potager</h3>
+      <SeparatorMenu />
+      <div className="menu-container show-state">
+        <img src={jardinnage} alt="logo jardinnage" className="show-state" />
+        <div className="menu-info-user">
+          <span className="menu-name show-state">{user.name}</span>
+          <span className="menu-email show-state">{user.email}</span>
+        </div>
       </div>
-      <SeparatorLessMargin />
+      <SeparatorMenu />
       <Link to="/parametres">Paramètres</Link>
       <Link to="/stock">Mon stock</Link>
-      <button onClick={() => logOut()}>SE DÉCONNECTER</button>
+      <button className="log-out-btn show-state" onClick={() => logOut()}>
+        SE DÉCONNECTER
+      </button>
     </div>
   );
 };

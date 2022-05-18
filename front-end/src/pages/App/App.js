@@ -30,8 +30,20 @@ import { UserContext } from '../../utilities/Context';
 function App() {
   const [user, updateUser] = useState();
 
+  const [show, showMenu] = useState(false);
+
   return (
-    <div className="App">
+    <div
+      className="App"
+      onClick={(e) => {
+        if (
+          e.target.className !== 'login-menu-button' &&
+          !e.target.classList.contains('show-state')
+        ) {
+          showMenu(false);
+        }
+      }}
+    >
       <BrowserRouter>
         <UserContext.Provider
           value={{
@@ -39,7 +51,7 @@ function App() {
             updateUser,
           }}
         >
-          <Header />
+          <Header show={show} showMenu={showMenu} />
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/login" element={<Login />}></Route>

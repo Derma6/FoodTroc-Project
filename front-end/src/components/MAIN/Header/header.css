@@ -8,9 +8,15 @@ header {
   padding: 15px;
   position: relative;
 }
-.login-button {
+.login-menu-button {
   width: fit-content;
   margin-bottom: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.login-menu-button:hover {
+  transition: 0.5s;
+  color: var(--secondary-color);
 }
 header a {
   text-decoration: none;

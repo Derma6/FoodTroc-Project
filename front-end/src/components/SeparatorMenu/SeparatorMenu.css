@@ -1,0 +1,6 @@
+.separator-menu {
+  width: 75%;
+  height: 3px;
+  background-color: var(--secondary-color);
+  margin: 3% auto;
+}

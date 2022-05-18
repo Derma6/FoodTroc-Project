@@ -1,12 +1,12 @@
 import React from 'react';
-import './Contact.css'
+import './Contact.css';
 
 import ContactForm from '../../components/formulaires/ContactForm/ContactForm';
 
-const Contact = ({ user }) => {
+const Contact = () => {
   return (
     <div className="contact">
-      <ContactForm user={user} />
+      <ContactForm />
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import Logo from '../../../styles/images/foodtroc_logo.png';
 
@@ -7,7 +7,7 @@ import Menu from '../../Menu/Menu';
 
 import './header.css';
 
-const Header = () => {
+const Header = ({ show, showMenu }) => {
   const { user } = useContext(UserContext);
 
   return (
@@ -34,11 +34,13 @@ const Header = () => {
       </nav>
       {user ? (
         <>
-          <h2>Mon potager</h2>
-          <Menu />
+          <p className="login-menu-button" onClick={() => showMenu(!show)}>
+            Mon potager
+          </p>
+          {show && <Menu />}
         </>
       ) : (
-        <Link to="/login" className="login-button">
+        <Link to="/login" className="login-menu-button">
           Connexion
         </Link>
       )}

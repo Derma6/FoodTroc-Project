@@ -1,15 +1,35 @@
 .menu {
   background-color: white;
   border-radius: 10px;
-  /* text-align: center; */
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  gap: 2vh;
+  width: 20vw;
   position: absolute;
   right: 10px;
-  top: 125px;
+  top: 90px;
   padding: 20px;
+}
+.menu-title {
+  text-align: center;
+}
+.menu-container {
+  display: flex;
 }
 .menu-info-user {
   display: flex;
   flex-direction: column;
+  margin-left: 5%;
+}
+.menu-email {
+  font-size: 0.8em;
+}
+.log-out-btn {
+  margin: 1vh auto;
+  width: 80%;
+  height: 5vh;
+  border: none;
+  color: white;
+  background-color: var(--secondary-color);
+  box-shadow: 1px 3px 8px black;
+  cursor: pointer;
 }

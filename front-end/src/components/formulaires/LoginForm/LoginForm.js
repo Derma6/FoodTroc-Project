@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   getAuth,
   signInWithEmailAndPassword,
@@ -14,10 +14,11 @@ const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const navigate = useNavigate()
   const { user, updateUser } = useContext(UserContext);
-  useEffect(() => {
-    console.log(user);
-  }, [user]);
+  // useEffect(() => {
+  //   console.log(user);
+  // }, [user]);
 
   async function getUser(uid, token) {
     const response = await fetch(`http://localhost:3001/users/${uid}`);
@@ -26,17 +27,33 @@ const LoginForm = () => {
   }
 
   function logIn() {
+
+    
     const auth = getAuth();
+
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const uid = userCredential.user.uid;
         const token = userCredential.user.accessToken;
         getUser(uid, token);
+        return uid
+      })
+      .then((uid) => {
+        uid ? (
+          navigate('/', { replace: true })
+        ) : (
+          navigate("../login", { replace: true })
+        )
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
       });
+      
+      // .catch((error) => {
+      //   const errorCode = error.code;
+      //   const errorMessage = error.message;
+      // });
   }
 
   return (

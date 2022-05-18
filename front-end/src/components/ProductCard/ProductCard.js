@@ -17,7 +17,7 @@ const ProductCard = () => {
       />
       <div className="product-footer">
         <div className="location">
-          <span class="material-icons">place</span>
+          <span className="material-icons">place</span>
           <p>Beauvais</p>
         </div>
         <button>RESERVER</button>

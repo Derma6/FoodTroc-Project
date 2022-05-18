@@ -1,5 +1,8 @@
 .baniere {
-  width: 100%;
+  background-image: url("../../styles/images/fruitsveggies.png");
+  background-size: cover;
+  width: 100vw;
+  height: 55vh;
 }
 .howTo-title {
   margin-top: 30px;
@@ -11,4 +14,14 @@
 }
 .first-section-howto p {
   margin: 1em 0;
+}
+
+img:first-of-type {
+  margin-left: -30%;
+  margin-bottom: 5%;
+}
+
+img:nth-of-type(2n) {
+  margin-left: 30%;
+  margin-top: 5%;
 }

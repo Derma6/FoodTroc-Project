@@ -1,0 +1,11 @@
+.pop-up {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50vw;
+  top: 50vh;
+  background-color: white;
+  width: 30%;
+  height: 40vh;
+  border-radius: 8px;
+  box-shadow: 0 0 0 max(100vh, 100vw) rgba(0, 0, 0, 0.5);
+}

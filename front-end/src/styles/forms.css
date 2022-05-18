@@ -62,23 +62,3 @@
   border-radius: 8px;
   resize: none;
 }
-.delete-account {
-  margin-top: 5%;
-  width: 20vw;
-  height: 5vh;
-  border: none;
-  color: white;
-  background-color: red;
-  box-shadow: 1px 3px 8px black;
-  cursor: pointer;
-}
-.validate-settings {
-  margin-top: 5%;
-  width: 20vw;
-  height: 5vh;
-  border: none;
-  color: white;
-  background-color: var(--primary-color);
-  box-shadow: 1px 3px 8px black;
-  cursor: pointer;
-}

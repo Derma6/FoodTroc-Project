@@ -6,6 +6,9 @@ import {
   sendPasswordResetEmail,
   signOut,
   onAuthStateChanged,
+  updatePassword,
+  reauthenticateWithCredential,
+  EmailAuthProvider,
 } from 'firebase/auth';
 
 const firebaseConfig = {
@@ -28,4 +31,7 @@ export {
   sendPasswordResetEmail,
   signOut,
   onAuthStateChanged,
+  updatePassword,
+  reauthenticateWithCredential,
+  EmailAuthProvider,
 };

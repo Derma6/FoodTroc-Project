@@ -38,7 +38,7 @@ const LoginForm = () => {
         return uid;
       })
       .then((uid) => {
-        // uid && navigate('/', { replace: true });
+        uid && navigate('/', { replace: true });
       })
       .catch((error) => {
         // error.style.display="block"

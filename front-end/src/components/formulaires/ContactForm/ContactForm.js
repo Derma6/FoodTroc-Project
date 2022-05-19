@@ -15,16 +15,22 @@ const Contact = () => {
   const [emailStatus, setEmailStatus] = useState()
   const navigate = useNavigate();
 
-  const sendEmail = () => {
-  
 
-    emailjs.sendForm('service_rr6dhnc', 'template_mhedlzq', form.current, 'qD5WRLIvKcOyPw8Zx')
+  const sendEmail = () => {
+
+    !user ? (
+      emailjs.sendForm('service_rr6dhnc', 'template_mhedlzq', form.current, 'qD5WRLIvKcOyPw8Zx')
+    ) : (
+      emailjs.sendForm('service_rr6dhnc', 'template_962sczl', form.current, 'qD5WRLIvKcOyPw8Zx')
+    )
       .then((result) => {
           console.log(result.text);
           setEmailStatus(true)
       }, (error) => {
           console.log(error.text);
       });
+  
+
   };
 
   if (user) {
@@ -33,10 +39,15 @@ const Contact = () => {
         <h1>Contact</h1>
         <SeparatorLessMargin />
         <form ref={form} className="inputs">
+          <input style={{display: "none"}} name="user_uid" value={user.uid} type="text"/>
+          <input style={{display: "none"}} name="user_name" value={user.name} type="text"/>
           <input name="user_message_subject" type="text" placeholder="OBJET DU MESSAGE" />
           <textarea name="user_message" type="text" rows="10" placeholder="VOTRE MESSAGE"></textarea>
         </form>
-        <input type="submit" value="Send" className="validate-form" />
+        <button type="submit" onClick={sendEmail} className="validate-form">ENVOYER</button>
+        {
+        emailStatus && <h4 style={{margin: "3% 0 0 0", color: "darkgreen"}}>Demande de contact envoyée.</h4>
+      }
       </div>
     );
   } else {

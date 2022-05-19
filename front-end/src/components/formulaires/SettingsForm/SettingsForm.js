@@ -12,6 +12,7 @@ const SettingsForm = ({
   updateEmailLoc,
   updateLocation,
   updatePass,
+  popDelete,
 }) => {
   const { user } = useContext(UserContext);
 
@@ -19,7 +20,6 @@ const SettingsForm = ({
     <div className="form">
       <h1>Paramètres</h1>
       <SeparatorLessMargin />
-
       <div className="container">
         <span className="settings-category">Prénom : </span>
         <span>{user.name}</span>
@@ -44,16 +44,9 @@ const SettingsForm = ({
       <button className="password" onClick={() => updatePass(true)}>
         MODIFIER MOT DE PASSE
       </button>
-      {/* <div className="inputs">
-        <label>Modifier mon adresse mail :</label>
-        <input type="email" />
-        <label>Nouveau mot de passe :</label>
-        <input type="password" />
-        <label>Confirmer le nouveau mot de passe :</label>
-        <input type="password" />
-      </div> */}
-      {/* <button className="validate-settings">Valider les modifications</button> */}
-      <button className="delete-account">SUPPRIMER MON COMPTE</button>
+      <button className="delete-account" onClick={() => popDelete(true)}>
+        SUPPRIMER MON COMPTE
+      </button>
     </div>
   );
 };

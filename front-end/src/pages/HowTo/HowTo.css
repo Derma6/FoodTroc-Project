@@ -16,12 +16,12 @@
   margin: 1em 0;
 }
 
-img:first-of-type {
+#people-food {
   margin-left: -30%;
   margin-bottom: 5%;
 }
 
-img:nth-of-type(2n) {
+#basket {
   margin-left: 30%;
   margin-top: 5%;
 }

@@ -13,7 +13,7 @@ import { UserContext } from '../../../utilities/Context';
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [loginError, setLoginError] = useState()
+  const [loginError, setLoginError] = useState();
 
   const navigate = useNavigate();
   const { user, updateUser } = useContext(UserContext);
@@ -38,15 +38,13 @@ const LoginForm = () => {
         return uid;
       })
       .then((uid) => {
-        uid && (
-          navigate('/', { replace: true })
-        ) 
+        // uid && navigate('/', { replace: true });
       })
       .catch((error) => {
         // error.style.display="block"
         const errorCode = error.code;
         const errorMessage = error.message;
-        setLoginError(true)
+        setLoginError(true);
       });
   }
 
@@ -74,9 +72,11 @@ const LoginForm = () => {
           placeholder="MOT DE PASSE"
         ></input>
       </div>
-      {
-        loginError && <h4 style={{margin: "3% 0 -5% 0", color: "darkgreen"}}>Email ou mot de passe invalide</h4>
-      }
+      {loginError && (
+        <h4 style={{ margin: '3% 0 -5% 0', color: 'darkgreen' }}>
+          Email ou mot de passe invalide
+        </h4>
+      )}
       <div className="login-lost">
         <button
           className="validate-form"

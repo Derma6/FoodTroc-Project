@@ -1,21 +1,21 @@
 import React from 'react';
-import './StockProductCard.css'
-import SeparatorLessMargin from'../SeparatorLessMargin/SeparatorLessMargin'
+import './StockProductCard.css';
+import SeparatorLessMargin from '../SeparatorLessMargin/SeparatorLessMargin';
 
-const StockProductCard = ({stock}) => {
-    return (
-        <div className="stock-card">
-            <div className="stock-info">
-                <h2>{stock.stock.productName}</h2>
-                <SeparatorLessMargin />
-            </div>
-            <img
-                alt={'abricots'}
-                className="product-picture"
-                src={require('../../styles/images/photo_tomates.jpg')}
-            />
-        </div>
-    );
+const StockProductCard = ({ data }) => {
+  return (
+    <div className="stock-card">
+      <div className="stock-info">
+        <h2>{data.productName}</h2>
+        <SeparatorLessMargin />
+      </div>
+      <img
+        alt={data.productName}
+        className="product-picture"
+        src={`https://i.ibb.co/KhxnRjn/fraise.jpg`}
+      />
+    </div>
+  );
 };
 
 export default StockProductCard;

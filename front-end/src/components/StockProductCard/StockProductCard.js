@@ -2,11 +2,11 @@ import React from 'react';
 import './StockProductCard.css'
 import SeparatorLessMargin from'../SeparatorLessMargin/SeparatorLessMargin'
 
-const StockProductCard = () => {
+const StockProductCard = ({stock}) => {
     return (
         <div className="stock-card">
             <div className="stock-info">
-                <h2>ABRICOTS</h2>
+                <h2>{stock.stock.productName}</h2>
                 <SeparatorLessMargin />
             </div>
             <img

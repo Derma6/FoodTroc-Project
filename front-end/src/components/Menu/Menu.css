@@ -34,3 +34,7 @@
   box-shadow: 1px 3px 8px black;
   cursor: pointer;
 }
+
+.menu img {
+  width: 20%;
+}

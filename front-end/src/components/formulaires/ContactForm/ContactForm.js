@@ -1,5 +1,5 @@
-import React, { useContext, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useRef, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import SeparatorLessMargin from '../../SeparatorLessMargin/SeparatorLessMargin';
 
 import '../../../styles/forms.css';
@@ -12,6 +12,8 @@ const Contact = () => {
 
  // ---------------------------- EMAILJS ----------------------------------------------- //
   const form = useRef();
+  const [emailStatus, setEmailStatus] = useState()
+  const navigate = useNavigate();
 
   const sendEmail = () => {
   
@@ -19,6 +21,7 @@ const Contact = () => {
     emailjs.sendForm('service_rr6dhnc', 'template_mhedlzq', form.current, 'qD5WRLIvKcOyPw8Zx')
       .then((result) => {
           console.log(result.text);
+          setEmailStatus(true)
       }, (error) => {
           console.log(error.text);
       });
@@ -51,6 +54,9 @@ const Contact = () => {
           <textarea type="text" name="user_message" rows="10" placeholder="VOTRE MESSAGE"></textarea>
         </form>
         <button type="submit" onClick={sendEmail} className="validate-form">ENVOYER</button>
+        {
+        emailStatus && <h4 style={{margin: "3% 0 0 0", color: "darkgreen"}}>Demande de contact envoyée.</h4>
+      }
       </div>
     );
   }

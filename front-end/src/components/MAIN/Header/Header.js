@@ -4,6 +4,7 @@ import Logo from '../../../styles/images/foodtroc_logo.png';
 
 import { UserContext } from '../../../utilities/Context';
 import Menu from '../../Menu/Menu';
+import jardinnage from '../../../styles/images/jardinage.png';
 
 import './header.css';
 
@@ -36,14 +37,15 @@ const Header = ({ show, showMenu }) => {
         </NavLink>
       </nav>
       {user ? (
-        <>
+        <div className="header-user">
+          <img src={jardinnage} onClick={() => showMenu(!show)} className="user-icon" alt="logo jardinnage"/>
           <p className="login-menu-button" onClick={() => showMenu(!show)}>
             Mon potager
           </p>
           {show && <Menu />}
-        </>
+        </div>
       ) : (
-        <Link to="/login" className="login-menu-button">
+        <Link to="/login" style={{textDecoration: "underline"}} className="login-menu-button">
           Connexion
         </Link>
       )}

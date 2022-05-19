@@ -10,12 +10,14 @@ header {
 }
 .login-menu-button {
   width: fit-content;
+  color: var(--primary-color);
   margin-bottom: 20px;
   font-weight: bold;
+  font-size: 1.3em;
   cursor: pointer;
 }
 .login-menu-button:hover {
-  transition: 0.5s;
+  transition: 0.2s;
   color: var(--secondary-color);
 }
 header a {
@@ -45,5 +47,17 @@ nav a:hover {
 }
 
 header h2:hover {
+  cursor: pointer;
+}
+
+.header-user {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 5%;
+}
+
+.user-icon {
+  width: 15%;
   cursor: pointer;
 }

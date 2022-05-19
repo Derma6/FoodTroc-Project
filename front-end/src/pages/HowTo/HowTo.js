@@ -14,7 +14,13 @@ const HowTo = () => {
       <h1 className="howTo-title">Comment ça marche ?</h1>
       <Separator />
       <section className="first-section-howto">
-        <img id="people-food" src={people} alt={"people exchanging food"}/>
+        <div className="image-quote">
+          <img id="people-food" src={people} alt={"people exchanging food"}/>
+          <div className="quote1">
+            <p className="foodtroc-quote">« Un service de qualité au service de l'anti-gaspi ! »</p>
+            <p className="foodtroc-user">Antoine, FoodTrocqueur depuis 1 an</p>
+          </div>
+        </div>
         <p>
           Gratuit, simple d’utilisation et pratique, FOOD TROC est conçu pour
           plaire au plus réticent d’entre nous !
@@ -28,7 +34,13 @@ const HowTo = () => {
           Pour déposer une annonce, on ajoute une description des fruits et
           légumes que l’on souhaite échanger ou vendre, et c’est en ligne !
         </p>
-        <img id="basket" src={basket} alt={"basket"}/>
+        <div className="image-quote">
+          <div className="quote2">
+            <p className="foodtroc-quote">« Je ne savais plus quoi faire de mes fruits que je n'utilisais pas. Avec FoodTroc, c'est devenu si simple ! »</p>
+            <p className="foodtroc-user">Marie, FoodTrocqueuse depuis 3 mois</p>
+          </div>
+          <img id="basket" src={basket} alt={"basket"}/>
+        </div>
       </section>
     </main>
   );

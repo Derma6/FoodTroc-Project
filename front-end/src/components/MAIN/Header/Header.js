@@ -19,6 +19,9 @@ const Header = ({ show, showMenu }) => {
         <NavLink activeclassname="active" to="/">
           Accueil
         </NavLink>
+        <NavLink activeclassname="active" to="/stock">
+          Mon stock
+        </NavLink>
         <NavLink activeclassname="active" to="/commentcamarche">
           Comment ça marche ?
         </NavLink>

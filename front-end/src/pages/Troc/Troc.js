@@ -28,4 +28,13 @@ const Troc = () => {
     );
 };
 
+
+// {data.map((item)=>{
+//   return(
+// < ProductCard />
+//   );
+// })}
+// </div>
+
+
 export default Troc;

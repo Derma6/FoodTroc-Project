@@ -26,9 +26,11 @@ const Header = ({ show, showMenu }) => {
         <NavLink activeclassname="active" to="/troquez">
           Troquez !
         </NavLink>
-        <NavLink activeclassname="active" to="/stock">
-          Mon stock
-        </NavLink>
+        {user && (
+          <NavLink activeclassname="active" to="/stock">
+            Mon stock
+          </NavLink>
+        )}
         {/* <NavLink activeclassname="active" to="/blog">
           Blog
         </NavLink> */}
@@ -38,14 +40,23 @@ const Header = ({ show, showMenu }) => {
       </nav>
       {user ? (
         <div className="header-user">
-          <img src={jardinnage} onClick={() => showMenu(!show)} className="user-icon" alt="logo jardinnage"/>
           <p className="login-menu-button" onClick={() => showMenu(!show)}>
             Mon potager
           </p>
+          <img
+            src={jardinnage}
+            onClick={() => showMenu(!show)}
+            className="user-icon"
+            alt="logo jardinnage"
+          />
           {show && <Menu />}
         </div>
       ) : (
-        <Link to="/login" style={{textDecoration: "underline"}} className="login-menu-button">
+        <Link
+          to="/login"
+          style={{ textDecoration: 'underline' }}
+          className="login-menu-button"
+        >
           Connexion
         </Link>
       )}

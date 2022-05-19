@@ -14,6 +14,7 @@ import SeparatorLessMargin from '../../SeparatorLessMargin/SeparatorLessMargin';
 
 //--------------------IMPORT CSS--------------------//
 import '../../../styles/forms.css';
+import { useNavigate } from 'react-router-dom';
 
 const SignUpFom = () => {
   const [name, setName] = useState();
@@ -26,6 +27,8 @@ const SignUpFom = () => {
   const [signInError, setSignInError] = useState();
 
   const { user, updateUser } = useContext(UserContext);
+
+  const navigate = useNavigate();
 
   // useEffect(() => {
   //   console.log(user);
@@ -40,6 +43,10 @@ const SignUpFom = () => {
         const newUser = { uid, name, email, location };
         easyPOST(newUser, `http://localhost:3001/users`, token);
         updateUser({ ...newUser, token });
+        return uid;
+      })
+      .then((uid) => {
+        uid && navigate('/', { replace: true });
       })
       .catch((error) => {
         const errorCode = error.code;

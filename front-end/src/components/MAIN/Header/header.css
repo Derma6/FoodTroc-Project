@@ -11,10 +11,10 @@ header {
 .login-menu-button {
   width: fit-content;
   color: var(--primary-color);
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   font-weight: bold;
   font-size: 1.3em;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 .login-menu-button:hover {
   transition: 0.2s;
@@ -24,6 +24,16 @@ header a {
   text-decoration: none;
   color: black;
   font-weight: 500;
+}
+.header-user {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5%;
+  cursor: pointer;
+}
+.user-icon {
+  width: 15%;
 }
 
 nav a {
@@ -35,29 +45,25 @@ nav a {
   color: var(--primary-color);
   border-bottom: solid 5px var(--primary-color);
 }
-
 nav a:hover {
   color: var(--primary-color);
 }
-
-@media all and (max-width: 1200px) {
-  nav a {
-    margin: 15px;
-  }
-}
-
 header h2:hover {
   cursor: pointer;
 }
 
-.header-user {
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  gap: 5%;
+@media all and (max-width: 1800px) {
+  nav a {
+    margin: 38px;
+  }
 }
-
-.user-icon {
-  width: 15%;
-  cursor: pointer;
+@media all and (max-width: 1400px) {
+  nav a {
+    margin: 25px;
+  }
+}
+@media all and (max-width: 1200px) {
+  nav a {
+    margin: 15px;
+  }
 }

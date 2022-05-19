@@ -9,7 +9,7 @@ import { UserContext } from '../../../utilities/Context';
 
 const SettingsForm = ({
   updateName,
-  updateEmail,
+  updateEmailLoc,
   updateLocation,
   updatePass,
 }) => {
@@ -30,7 +30,7 @@ const SettingsForm = ({
       <div className="container">
         <span className="settings-category">Email : </span>
         <span>{user.email}</span>
-        <button className="modify-button" onClick={() => updateEmail(true)}>
+        <button className="modify-button" onClick={() => updateEmailLoc(true)}>
           Modifier
         </button>
       </div>

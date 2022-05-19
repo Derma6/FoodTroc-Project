@@ -11,7 +11,7 @@ import './Settings.css';
 
 const Settings = () => {
   const [upName, updateName] = useState(false);
-  const [upEmail, updateEmail] = useState(false);
+  const [upEmail, updateEmailLoc] = useState(false);
   const [upLocation, updateLocation] = useState(false);
   const [upPass, updatePass] = useState(false);
   const [ReAuth, setAuth] = useState(false);
@@ -20,12 +20,12 @@ const Settings = () => {
     <div className="settings">
       <SettingsForm
         updateName={updateName}
-        updateEmail={updateEmail}
+        updateEmailLoc={updateEmailLoc}
         updateLocation={updateLocation}
         updatePass={updatePass}
       />
       {upName && <ModifyName updateName={updateName} />}
-      {upEmail && <ModifyEmail updateEmail={updateEmail} />}
+      {upEmail && <ModifyEmail updateEmailLoc={updateEmailLoc} />}
       {upLocation && <ModifyLocation updateLocation={updateLocation} />}
       {upPass && <ModifyPassword updatePass={updatePass} setAuth={setAuth} />}
       {ReAuth && <ReAuthenticate setAuth={setAuth} />}

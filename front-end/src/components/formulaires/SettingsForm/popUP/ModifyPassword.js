@@ -10,11 +10,7 @@ const ModifyPassword = ({ updatePass, setAuth }) => {
   function changePassword() {
     if (newPass !== newPassC) setError(true);
 
-    // setLoading(true);
-
-    const user = auth.currentUser;
-
-    updatePassword(user, newPass)
+    updatePassword(auth.currentUser, newPass)
       .then(() => {
         updatePass(false);
       })

@@ -22,6 +22,29 @@
 }
 
 #basket {
-  margin-left: 30%;
+  margin-left: 15%;
   margin-top: 5%;
+}
+
+.image-quote {
+  display: flex;
+  font-size: 1.4em;
+  align-items: center;
+}
+
+.quote1 {
+  margin-left: 20%;
+}
+
+.quote2 {
+  margin-left: -25%;
+}
+
+.foodtroc-user {
+  font-style: italic;
+  color: darkgrey;
+}
+
+.foodtroc-quote {
+  width: 35vw;
 }

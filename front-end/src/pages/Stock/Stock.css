@@ -5,21 +5,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80vh;
+  /* height: 80vh; */
 }
 .my-stock {
   background-color: white;
   background-image: url('../../styles/images/pano_fruitsveggies_lessOpacity.png');
   border-radius: 15px;
+  margin: 5vh auto;
   padding: 1.5% 3% 1.5% 3%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 .stock-products {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
 }
 
 .add-btn {

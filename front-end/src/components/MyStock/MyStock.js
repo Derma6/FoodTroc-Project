@@ -13,10 +13,12 @@ const MyStock = () => {
   const { user } = useContext(UserContext);
   //   const [userStock, setUserStock] = useState();
 
+  console.log(user.stock);
+
   const { data, isLoading, error } = useFetch(
     `http://localhost:3001/userstocks/${user.uid}`
   );
-  const userStock = data.stock;
+  const userStock = user.stock;
 
   // console.log(isLoading);
   // console.log(userStock);

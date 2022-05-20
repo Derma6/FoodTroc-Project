@@ -1,36 +1,80 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
-import './AddProductForm.css'
-import SeparatorLessMargin from '../../SeparatorLessMargin/SeparatorLessMargin'
-
+import './AddProductForm.css';
+import SeparatorLessMargin from '../../SeparatorLessMargin/SeparatorLessMargin';
+import { ProductDataContext, UserContext } from '../../../utilities/Context';
+import { easyUPDATE } from '../../../utilities/easyFetch';
 
 const AddProductForm = () => {
+  const { productData } = useContext(ProductDataContext);
+  const { user, updateUser } = useContext(UserContext);
+
+  const [productName, setProductName] = useState();
+  const [freshness, setFreshness] = useState();
+  const [quantity, setQuantity] = useState();
+  const [description, setDescription] = useState();
+
+  const navigate = useNavigate();
+
+  function addProduct() {
+    const newProduct = {
+      productName,
+      freshness,
+      quantity,
+      description,
+      id: user.stock.length + 1,
+    };
+
+    updateUser({ ...user, stock: [...user.stock, newProduct] });
+
+    easyUPDATE(
+      { stock: [...user.stock, newProduct] },
+      `http://localhost:3001/users/${user.uid}`,
+      user.token
+    ).then(() => navigate('/stock', { replace: true }));
+  }
+
   return (
     <div className="form">
       <h1 className="add-h1">AJOUTER UN PRODUIT</h1>
       <SeparatorLessMargin />
-      <div  className="inputs">
-          <select className="select-product" label="Produit">
-            <option value="select">SELECTIONNEZ UN PRODUIT</option>
-            <option value="Tomates">Tomates</option>
-            <option value="Carrotes">Carrotes</option>
-            <option value="Pomme de terre">Pommes de terre</option>
-          </select>
-          <select label="freshness">
-            <option value="select">FRAICHEUR</option>
-            <option value="fresh">Frais</option>
-            <option value="good">Normal</option>
-            <option value="soon">Dépêchez-vous !</option>
-          </select>
-          <input id="object" placeholder="QUANTITÉ" variant="outlined" />
-          <textarea rows="10" placeholder="DESCRIPTION DU PRODUIT"></textarea>
+      <div className="inputs">
+        <select
+          className="select-product"
+          label="Produit"
+          onChange={(e) => setProductName(e.target.value)}
+        >
+          <option value="select">SELECTIONNEZ UN PRODUIT</option>
+          {productData.map((element) => (
+            <option key={element.id} value={element.name}>
+              {element.name}
+            </option>
+          ))}
+        </select>
+        <select
+          label="freshness"
+          onChange={(e) => setFreshness(e.target.value)}
+        >
+          <option value="select">FRAICHEUR</option>
+          <option value="Frais">Frais</option>
+          <option value="Normal">Normal</option>
+          <option value="Dépêchez-vous !">Dépêchez-vous !</option>
+        </select>
+        <input
+          id="object"
+          placeholder="QUANTITÉ"
+          onChange={(e) => setQuantity(e.target.value)}
+        />
+        <textarea
+          rows="10"
+          placeholder="DESCRIPTION DU PRODUIT"
+          onChange={(e) => setDescription(e.target.value)}
+        ></textarea>
       </div>
 
-      <button className="validate-form">
-      <Link to="/stock">
-                    AJOUTER
-                </Link>
+      <button className="validate-form" onClick={() => addProduct()}>
+        AJOUTER
       </button>
     </div>
   );

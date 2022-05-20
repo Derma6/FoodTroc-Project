@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../utilities/Context';
 import { auth, signOut } from '../../utilities/firebase';
 import SeparatorMenu from '../SeparatorMenu/SeparatorMenu';
@@ -10,11 +10,15 @@ import './Menu.css';
 
 const Menu = () => {
   const { user, updateUser } = useContext(UserContext);
+  const navigate = useNavigate()
 
   function logOut() {
     signOut(auth)
       .then(() => {
         updateUser(false);
+      })
+      .then(() => {
+        navigate('/', { replace: true })
       })
       .catch((error) => {});
   }

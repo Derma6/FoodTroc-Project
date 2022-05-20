@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-import './AddProductForm.css';
 import SeparatorLessMargin from '../../SeparatorLessMargin/SeparatorLessMargin';
 import { ProductDataContext, UserContext } from '../../../utilities/Context';
 import { easyUPDATE } from '../../../utilities/easyFetch';
@@ -14,6 +13,9 @@ const AddProductForm = () => {
   const [freshness, setFreshness] = useState();
   const [quantity, setQuantity] = useState();
   const [description, setDescription] = useState();
+
+  const quantityText = document.querySelector(".quantity-text")
+  const quantityType = document.querySelector(".quantity-type")
 
   const navigate = useNavigate();
 
@@ -61,11 +63,25 @@ const AddProductForm = () => {
           <option value="Normal">Normal</option>
           <option value="Dépêchez-vous !">Dépêchez-vous !</option>
         </select>
-        <input
-          id="object"
-          placeholder="QUANTITÉ"
-          onChange={(e) => setQuantity(e.target.value)}
-        />
+        <div className="quantity">
+          <input
+            // onChange={(e) => setQuantity(e.target.value)}
+            className="quantity-text"
+            id="object"
+            placeholder="QUANTITÉ"
+          />
+          <select 
+          onChange={(e) => setQuantity(`${quantityText.value} ${quantityType.value}`)}
+          className="quantity-type"
+          label="quantityType"
+          >
+            <option value="selectType">Type</option>
+            <option value="Kilo(s)">Kilo(s)</option>
+            <option value="Grammes">Grammes</option>
+            <option value="Unité(s)">Unité(s)</option>
+            <option value="Autre">Autre</option>
+          </select>
+        </div>
         <textarea
           rows="10"
           placeholder="DESCRIPTION DU PRODUIT"

@@ -36,7 +36,7 @@ const Troc = () => {
   return (
     <main className="troc-page">
       <section className="troc-filter-container">
-        <input type="text" placeholder="Recherché un fruit ou un légume..." />
+        <input type="text" placeholder="Rechercher un fruit ou un légume..." />
       </section>
       <section>
         <div className="troc">

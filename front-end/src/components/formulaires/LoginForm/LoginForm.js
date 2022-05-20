@@ -8,18 +8,17 @@ import {
 import '../../../styles/forms.css';
 import SeparatorLessMargin from '../../SeparatorLessMargin/SeparatorLessMargin';
 
-import { UserContext } from '../../../utilities/Context';
+import { DataLoading, UserContext } from '../../../utilities/Context';
 
 const LoginForm = () => {
+  const { user, updateUser } = useContext(UserContext);
+  const { isDataLoading, setDataLoading } = useContext(DataLoading);
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loginError, setLoginError] = useState();
 
   const navigate = useNavigate();
-  const { user, updateUser } = useContext(UserContext);
-  // useEffect(() => {
-  //   console.log(user);
-  // }, [user]);
 
   async function getUser(uid, token) {
     const response = await fetch(`http://localhost:3001/users/${uid}`);
@@ -28,8 +27,12 @@ const LoginForm = () => {
   }
 
   function logIn() {
+
     
     if (loginError) return
+
+    setDataLoading(true);
+    
     const auth = getAuth();
 
     signInWithEmailAndPassword(auth, email, password)
@@ -41,6 +44,7 @@ const LoginForm = () => {
       })
       .then((uid) => {
         uid && navigate('/', { replace: true });
+        setDataLoading(false);
       })
       .catch((error) => {
         // error.style.display="block"

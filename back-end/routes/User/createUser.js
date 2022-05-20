@@ -11,7 +11,9 @@ module.exports = (app) => {
     });
     model
       .save()
-      .then(() => res.status(201).json({ message: 'User added' }))
+      .then(() =>
+        res.status(201).json({ message: 'User added', data: req.body })
+      )
       .catch((error) => res.status(400).json({ error }));
   });
 };

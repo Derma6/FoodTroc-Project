@@ -11,28 +11,7 @@ import './Stock.css';
 
 const Stock = () => {
   const { user } = useContext(UserContext);
-
-  // const [userStock, setUserStock] = useState([]);
-  const [isDataLoading, setDataLoading] = useState(false);
-  // const [error, setError] = useState(false);
-
-  // useEffect(() => {
-  //   async function fetchData(url) {
-  //     try {
-  //       const response = await fetch(url);
-  //       const data = await response.json();
-
-  //       setUserStock(data);
-  //     } catch (err) {
-  //       console.log(err);
-  //       setError(true);
-  //     } finally {
-  //       setDataLoading(false);
-  //     }
-  //   }
-
-  //   fetchData(`http://localhost:3001/userstocks/${user.uid}`);
-  // }, []);
+  const isDataLoading = false;
 
   return (
     <main className="stock">

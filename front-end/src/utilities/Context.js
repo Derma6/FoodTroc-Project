@@ -1,6 +1,5 @@
 import React from 'react';
 
 export const UserContext = React.createContext();
-export const UserStockContext = React.createContext();
-export const StockContext = React.createContext();
 export const ProductDataContext = React.createContext();
+export const DataLoading = React.createContext();

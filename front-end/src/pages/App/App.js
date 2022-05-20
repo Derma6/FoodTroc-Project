@@ -25,14 +25,20 @@ import Footer from '../../components/MAIN/Footer/Footer';
 
 //--------------------IMPORT CONTEXT--------------------//
 
-import { UserContext, ProductDataContext } from '../../utilities/Context';
+import {
+  UserContext,
+  ProductDataContext,
+  DataLoading,
+} from '../../utilities/Context';
 
 function App() {
+  // Variable with context
   const [user, updateUser] = useState();
-
   const [productData, setProductData] = useState();
+  const [isDataLoading, setDataLoading] = useState(true);
 
   useEffect(() => {
+    setDataLoading(true);
     async function fetchData(url) {
       try {
         const response = await fetch(url);
@@ -43,7 +49,7 @@ function App() {
         console.log(err);
         // setError(true);
       } finally {
-        // setDataLoading(false);
+        setDataLoading(false);
       }
     }
 
@@ -72,22 +78,24 @@ function App() {
           }}
         >
           <ProductDataContext.Provider value={{ productData, setProductData }}>
-            <Header show={show} showMenu={showMenu} />
-            <Routes>
-              <Route path="/" element={<Home />}></Route>
-              <Route path="/login" element={<Login />}></Route>
-              <Route path="/signUp" element={<SignUp />}></Route>
-              <Route path="/contact" element={<Contact />}></Route>
-              {/* <Route path="/blog" element={<Blog />}></Route>
+            <DataLoading.Provider value={{ isDataLoading, setDataLoading }}>
+              <Header show={show} showMenu={showMenu} />
+              <Routes>
+                <Route path="/" element={<Home />}></Route>
+                <Route path="/login" element={<Login />}></Route>
+                <Route path="/signUp" element={<SignUp />}></Route>
+                <Route path="/contact" element={<Contact />}></Route>
+                {/* <Route path="/blog" element={<Blog />}></Route>
             <Route path="/blog/:article" element={<BlogArticle />}></Route> */}
-              <Route path="/commentcamarche" element={<HowTo />}></Route>
-              <Route path="/troquez" element={<Troc />}></Route>
-              <Route path="/stock" element={<Stock />}></Route>
-              <Route path="/stock/add" element={<StockAdd />}></Route>
-              <Route path="/parametres" element={<Settings />}></Route>
-              <Route path="*" element={<Error />}></Route>
-            </Routes>
-            <Footer />
+                <Route path="/commentcamarche" element={<HowTo />}></Route>
+                <Route path="/troquez" element={<Troc />}></Route>
+                <Route path="/stock" element={<Stock />}></Route>
+                <Route path="/stock/add" element={<StockAdd />}></Route>
+                <Route path="/parametres" element={<Settings />}></Route>
+                <Route path="*" element={<Error />}></Route>
+              </Routes>
+              <Footer />
+            </DataLoading.Provider>
           </ProductDataContext.Provider>
         </UserContext.Provider>
       </BrowserRouter>

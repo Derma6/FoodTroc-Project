@@ -4,10 +4,14 @@
 .troc-filter-container {
 }
 .troc {
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  justify-items: center;
-  padding: 8% 5% 8% 5%;
+
+    background-image: url("../../styles/images/background_fruitsveggies.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: center;
+    padding: 8% 5% 8% 5%;
+    min-height: 80vh;
+
 }

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 
 //--------------------IMPORT CONTEXT--------------------//
 import { UserContext } from '../../../utilities/Context';
@@ -23,79 +23,77 @@ const SignUpFom = () => {
   const [passwordC, setPasswordC] = useState();
   const [location, setLocation] = useState();
 
-  const [isLoading, setLoading] = useState(false);
+  // const [isLoading, setLoading] = useState(false);
   const [signInError, setSignInError] = useState();
-  const [passwMatch, setPasswMatch] = useState()
-  const [invalidEmail, setInvalidEmail] = useState()
-  const [buttonGrey, setButtonGrey] = useState(false)
+  const [passwMatch, setPasswMatch] = useState();
+  const [invalidEmail, setInvalidEmail] = useState();
+  const [buttonGrey, setButtonGrey] = useState(false);
 
   const { user, updateUser } = useContext(UserContext);
 
   const navigate = useNavigate();
 
-  const emailCreate = document.querySelector("#email");
-  const logInBtn = document.querySelector(".validate-form")
+  const emailCreate = document.querySelector('#email');
+  const logInBtn = document.querySelector('.validate-form');
 
-  const passwordCreate = document.querySelector("#password");
-  const passwordVerify = document.querySelector("#passwordCONFIRM");  
+  const passwordCreate = document.querySelector('#password');
+  const passwordVerify = document.querySelector('#passwordCONFIRM');
 
   const styles = {
-    
-    button:{
-      backgroundColor: buttonGrey === true && "darkgrey" 
-    }
-  }
+    button: {
+      backgroundColor: buttonGrey === true && 'darkgrey',
+    },
+  };
 
   const validRegex =
     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-
   function signUp() {
-
-    if ( passwMatch ) return setPasswMatch(true) 
-    if ( invalidEmail ) return setInvalidEmail(true)
+    if (passwMatch) return setPasswMatch(true);
+    if (invalidEmail) return setInvalidEmail(true);
 
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const uid = userCredential.user.uid;
         const token = userCredential.user.accessToken;
-        const newUser = { uid, name, email, location, stock: [] };
+
+        const newUser = {
+          uid,
+          name,
+          email,
+          location,
+          stock: [],
+        };
         easyPOST(newUser, `http://localhost:3001/users`, token);
         updateUser({ ...newUser, token });
         return uid;
       })
       .then((uid) => {
         uid && navigate('/', { replace: true });
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        setSignInError(true);
       });
   }
 
   function verifyPass() {
     if (passwordCreate.value != passwordVerify.value) {
-      setPasswMatch(true)
-      setButtonGrey(true)
-      console.log(passwMatch)
+      setPasswMatch(true);
+      setButtonGrey(true);
+      console.log(passwMatch);
     } else {
-      setPasswMatch(false)
-      setButtonGrey(false)
+      setPasswMatch(false);
+      setButtonGrey(false);
     }
   }
 
   function verifyEmail() {
     if (emailCreate.value.match(validRegex)) {
-      setInvalidEmail(false)
-      setButtonGrey(false)
+      setInvalidEmail(false);
+      setButtonGrey(false);
     } else {
-      setInvalidEmail(true)
-      setButtonGrey(true)
+      setInvalidEmail(true);
+      setButtonGrey(true);
     }
-}
-
+  }
 
   return (
     <div className="form">
@@ -115,10 +113,10 @@ const SignUpFom = () => {
           placeholder="EMAIL"
         />
         {invalidEmail && (
-        <h4 style={{ margin: '3% 0 0% 0', color: 'darkgreen' }}>
-          Veuillez entrer une adresse mail valide
-        </h4>
-      )}
+          <h4 style={{ margin: '3% 0 0% 0', color: 'darkgreen' }}>
+            Veuillez entrer une adresse mail valide
+          </h4>
+        )}
         <input
           type="password"
           onChange={(e) => setPassword(e.target.value)}
@@ -131,8 +129,8 @@ const SignUpFom = () => {
           onBlur={verifyPass}
           id="passwordCONFIRM"
           placeholder="COMFIRMER MOT DE PASSE"
-          />
-          {passwMatch && (
+        />
+        {passwMatch && (
           <h4 style={{ margin: '3% 0 0% 0', color: 'darkgreen' }}>
             Les deux mots de passes ne correspondent pas
           </h4>
@@ -149,11 +147,15 @@ const SignUpFom = () => {
           Veuillez vérifier vos informations
         </h4>
       )}
-      <button style={styles.button} className="validate-form" onClick={() => {
-        signUp()
-        verifyEmail()
-        verifyPass()
-        }}>
+      <button
+        style={styles.button}
+        className="validate-form"
+        onClick={() => {
+          signUp();
+          verifyEmail();
+          verifyPass();
+        }}
+      >
         S'INSCRIRE
       </button>
     </div>

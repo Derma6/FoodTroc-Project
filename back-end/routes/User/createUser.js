@@ -1,9 +1,10 @@
 const User = require('../../models/user');
 
 const tokenCheck = require('./token');
+const getCoordinates = require('../../utilities/getCoordinates');
 
 module.exports = (app) => {
-  app.post('/users', tokenCheck, (req, res) => {
+  app.post('/users', tokenCheck, getCoordinates, (req, res) => {
     delete req.body._id;
     const model = new User({
       ...req.body,

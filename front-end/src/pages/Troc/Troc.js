@@ -1,40 +1,16 @@
 import React from 'react';
-import ProductCard from '../../components/ProductCard/ProductCard'
-import './Troc.css'
+import ProductCard from '../../components/ProductCard/ProductCard';
+import './Troc.css';
 
 const Troc = () => {
   return (
     <div className="troc-page">
-      <div className="troc-info">
-        
-      </div>
+      <div className="troc-info"></div>
       <div className="troc">
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
         <ProductCard />
       </div>
     </div>
-    );
+  );
 };
-
-
-// {data.map((item)=>{
-//   return(
-// < ProductCard />
-//   );
-// })}
-// </div>
-
 
 export default Troc;

@@ -6,5 +6,6 @@
     grid-template-columns: repeat(5, 1fr);
     justify-items: center;
     padding: 8% 5% 8% 5%;
+    min-height: 80vh;
 }
 

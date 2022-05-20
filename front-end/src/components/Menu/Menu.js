@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../utilities/Context';
 import { auth, signOut } from '../../utilities/firebase';
@@ -19,6 +19,7 @@ const Menu = () => {
       .catch((error) => {});
   }
 
+  console.log(user.token);
   return (
     <div className="menu show-state">
       <h3 className="menu-title show-state">Mon potager</h3>

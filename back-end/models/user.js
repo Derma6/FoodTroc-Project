@@ -7,6 +7,7 @@ module.exports = mongoose.model(
     name: { type: String, required: true },
     email: { type: String, required: true },
     location: { type: String, required: true },
+    gpsCoordinates: { type: Array, required: true },
     stock: [
       // {
       //   productName: { type: String, required: true },

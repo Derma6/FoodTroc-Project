@@ -16,7 +16,6 @@ export async function easyPOST(data, url, token) {
     body: JSON.stringify(data),
   })
     .then((response) => {
-      console.log(response.status);
       if (response.status === 201) {
         return response.json();
       } else {

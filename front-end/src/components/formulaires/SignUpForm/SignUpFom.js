@@ -7,7 +7,7 @@ import {
   getAuth,
 } from '../../../utilities/firebase';
 
-import { easyPOST } from '../../../utilities/easyFetch';
+import { easyGET, easyPOST } from '../../../utilities/easyFetch';
 
 //--------------------IMPORT COMPONENTS--------------------//
 import SeparatorLessMargin from '../../SeparatorLessMargin/SeparatorLessMargin';
@@ -65,8 +65,33 @@ const SignUpFom = () => {
           location,
           stock: [],
         };
-        easyPOST(newUser, `http://localhost:3001/users`, token);
-        updateUser({ ...newUser, token });
+
+        /////////////////////////////////////
+        fetch(`http://localhost:3001/users`, {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify(newUser),
+        })
+          .then((response) => {
+            if (response.status === 201) {
+              return response.json();
+            } else {
+              throw new Error('Something went wrong on api server!');
+            }
+          })
+          .then((response) => {
+            console.debug(response.message);
+            updateUser(response.data);
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+
+        ////////////////////////////////////
         return uid;
       })
       .then((uid) => {

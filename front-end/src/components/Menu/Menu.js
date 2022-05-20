@@ -19,6 +19,8 @@ const Menu = () => {
       .catch((error) => {});
   }
 
+  console.log(user);
+
   console.log(user.token);
   return (
     <div className="menu show-state">

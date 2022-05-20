@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { auth, updatePassword } from '../../../../utilities/firebase';
 
+import '../../../../styles/popups.css';
+
+
 const ModifyPassword = ({ updatePass, setAuth }) => {
   const [newPass, setNewPass] = useState();
   const [newPassC, setNewPassC] = useState();
@@ -20,23 +23,25 @@ const ModifyPassword = ({ updatePass, setAuth }) => {
   }
 
   return (
-    <div className="pop-up">
-      <h3>Modifer votre mot de passe :</h3>
+    <div className="pop-up-password">
+      <h3 className="popup-header">Modifer votre mot de passe :</h3>
       <label htmlFor="newP">Nouveau mot de passe : </label>
       <input
         name="newP"
         type="password"
         onChange={(e) => setNewPass(e.target.value)}
+        className="popup-text-password"
       />
       <label htmlFor="newPC">Confirmer votre mot de passe :</label>
       <input
         name="newPC"
         type="password"
         onChange={(e) => setNewPassC(e.target.value)}
+        className="popup-text-password"
       />
       {error && <p>Veuillez entrer des mots de passe identiques.</p>}
-      <button onClick={() => updatePass(false)}>ANNULER</button>
-      <button onClick={() => changePassword()}>ENREGISTRER</button>
+      <button className="validate-popup cancel" onClick={() => updatePass(false)}>ANNULER</button>
+      <button className="validate-popup" onClick={() => changePassword()}>ENREGISTRER</button>
     </div>
   );
 };

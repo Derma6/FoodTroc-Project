@@ -7,6 +7,7 @@ import SeparatorLessMargin from '../../SeparatorLessMargin/SeparatorLessMargin';
 
 import { UserContext } from '../../../utilities/Context';
 
+
 const SettingsForm = ({
   updateName,
   updateEmailLoc,

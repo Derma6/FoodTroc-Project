@@ -3,7 +3,7 @@ import { auth, updateEmail } from '../../../../utilities/firebase';
 
 import { UserContext } from '../../../../utilities/Context';
 
-import './PopUp.css';
+import '../../../../styles/popups.css';
 import { easyUPDATE } from '../../../../utilities/easyFetch';
 
 const ModifyEmail = ({ updateEmailLoc, setAuth }) => {
@@ -36,10 +36,10 @@ const ModifyEmail = ({ updateEmailLoc, setAuth }) => {
 
   return (
     <div className="pop-up">
-      <h3>Modifer votre email :</h3>
-      <input type="text" onChange={(e) => setNewEmail(e.target.value)} />
-      <button onClick={() => updateEmailLoc(false)}>ANNULER</button>
-      <button onClick={() => changeEmail()}>ENREGISTRER</button>
+      <h3 className="popup-header">Modifer votre email :</h3>
+      <input className="popup-text" type="text" onChange={(e) => setNewEmail(e.target.value)} />
+      <button className="validate-popup cancel" onClick={() => updateEmailLoc(false)}>ANNULER</button>
+      <button className="validate-popup" onClick={() => changeEmail()}>ENREGISTRER</button>
     </div>
   );
 };

@@ -1,4 +1,10 @@
+.troc-page {
+  background-image: url('../../styles/images/background_fruitsveggies.webp');
+}
+.troc-filter-container {
+}
 .troc {
+
     background-image: url("../../styles/images/background_fruitsveggies.webp");
     background-repeat: no-repeat;
     background-size: cover;
@@ -7,5 +13,5 @@
     justify-items: center;
     padding: 8% 5% 8% 5%;
     min-height: 80vh;
-}
 
+}

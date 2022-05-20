@@ -25,16 +25,36 @@ const SignUpFom = () => {
 
   const [isLoading, setLoading] = useState(false);
   const [signInError, setSignInError] = useState();
+  const [passwMatch, setPasswMatch] = useState()
+  const [invalidEmail, setInvalidEmail] = useState()
+  const [buttonGrey, setButtonGrey] = useState(false)
 
   const { user, updateUser } = useContext(UserContext);
 
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   console.log(user);
-  // }, [user]);
+  const emailCreate = document.querySelector("#email");
+  const logInBtn = document.querySelector(".validate-form")
+
+  const passwordCreate = document.querySelector("#password");
+  const passwordVerify = document.querySelector("#passwordCONFIRM");  
+
+  const styles = {
+    
+    button:{
+      backgroundColor: buttonGrey === true && "darkgrey" 
+    }
+  }
+
+  const validRegex =
+    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
 
   function signUp() {
+
+    if ( passwMatch ) return setPasswMatch(true) 
+    if ( invalidEmail ) return setInvalidEmail(true)
+
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
@@ -55,6 +75,28 @@ const SignUpFom = () => {
       });
   }
 
+  function verifyPass() {
+    if (passwordCreate.value != passwordVerify.value) {
+      setPasswMatch(true)
+      setButtonGrey(true)
+      console.log(passwMatch)
+    } else {
+      setPasswMatch(false)
+      setButtonGrey(false)
+    }
+  }
+
+  function verifyEmail() {
+    if (emailCreate.value.match(validRegex)) {
+      setInvalidEmail(false)
+      setButtonGrey(false)
+    } else {
+      setInvalidEmail(true)
+      setButtonGrey(true)
+    }
+}
+
+
   return (
     <div className="form">
       <h1>Inscription</h1>
@@ -72,6 +114,11 @@ const SignUpFom = () => {
           id="email"
           placeholder="EMAIL"
         />
+        {invalidEmail && (
+        <h4 style={{ margin: '3% 0 0% 0', color: 'darkgreen' }}>
+          Veuillez entrer une adresse mail valide
+        </h4>
+      )}
         <input
           type="password"
           onChange={(e) => setPassword(e.target.value)}
@@ -81,9 +128,15 @@ const SignUpFom = () => {
         <input
           type="password"
           onChange={(e) => setPasswordC(e.target.value)}
+          onBlur={verifyPass}
           id="passwordCONFIRM"
           placeholder="COMFIRMER MOT DE PASSE"
-        />
+          />
+          {passwMatch && (
+          <h4 style={{ margin: '3% 0 0% 0', color: 'darkgreen' }}>
+            Les deux mots de passes ne correspondent pas
+          </h4>
+        )}
         <input
           type="text"
           onChange={(e) => setLocation(e.target.value)}
@@ -96,7 +149,11 @@ const SignUpFom = () => {
           Veuillez vérifier vos informations
         </h4>
       )}
-      <button className="validate-form" onClick={() => signUp()}>
+      <button style={styles.button} className="validate-form" onClick={() => {
+        signUp()
+        verifyEmail()
+        verifyPass()
+        }}>
         S'INSCRIRE
       </button>
     </div>

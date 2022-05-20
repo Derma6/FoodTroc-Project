@@ -28,6 +28,8 @@ const LoginForm = () => {
   }
 
   function logIn() {
+    
+    if (loginError) return
     const auth = getAuth();
 
     signInWithEmailAndPassword(auth, email, password)

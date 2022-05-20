@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { UserContext } from '../../../../utilities/Context';
 import { easyUPDATE } from '../../../../utilities/easyFetch';
 
-import './PopUp.css';
+import '../../../../styles/popups.css';
 
 const ModifyLocation = ({ updateLocation }) => {
   const [newLocation, setNewLocation] = useState();
@@ -26,10 +26,10 @@ const ModifyLocation = ({ updateLocation }) => {
 
   return (
     <div className="pop-up">
-      <h3>Modifer votre localisation :</h3>
-      <input type="text" onChange={(e) => setNewLocation(e.target.value)} />
-      <button onClick={() => updateLocation(false)}>ANNULER</button>
-      <button onClick={() => changeLocation()}>ENREGISTRER</button>
+      <h3 className="popup-header">Modifer votre localisation :</h3>
+      <input className="popup-text" type="text" onChange={(e) => setNewLocation(e.target.value)} />
+      <button className="validate-popup cancel" onClick={() => updateLocation(false)}>ANNULER</button>
+      <button className="validate-popup" onClick={() => changeLocation()}>ENREGISTRER</button>
     </div>
   );
 };

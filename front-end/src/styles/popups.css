@@ -1,0 +1,103 @@
+.pop-up {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50vw;
+    top: 50vh;
+    background-color: var(--grey-color-form);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 2%;
+    padding: 3% 4% 3% 4%;
+    height: 35vh;
+    border-radius: 8px;
+    box-shadow: 0 0 0 max(100vh, 100vw) rgba(0, 0, 0, 0.5);
+}
+
+.pop-up-password {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50vw;
+    top: 50vh;
+    background-color: var(--grey-color-form);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 2%;
+    padding: 3% 4% 3% 4%;
+    height: 50vh;
+    border-radius: 8px;
+    box-shadow: 0 0 0 max(100vh, 100vw) rgba(0, 0, 0, 0.5);
+}
+
+.pop-up-delete {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50vw;
+    top: 50vh;
+    background-color: var(--grey-color-form);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2%;
+    padding: 3% 4% 3% 4%;
+    height: 50vh;
+    border-radius: 8px;
+    box-shadow: 0 0 0 max(100vh, 100vw) rgba(0, 0, 0, 0.5);
+}
+
+.popup-header {
+    margin-bottom: 15%;
+}
+
+.popup-text {
+    height: 4.5vh;
+    border-radius: 8px;
+    margin-bottom: 5%;
+}
+
+.popup-text-password {
+    border-radius: 8px;
+    height: 4.5vh;
+    margin-bottom: 5%;
+}
+
+.validate-popup {
+    margin-top: 2%;
+    width: 15vw;
+    height: 5vh;
+    border: none;
+    color: white;
+    background-color: var(--secondary-color);
+    box-shadow: 1px 3px 8px black;
+    cursor: pointer;
+}
+
+.validate-popup-auth {
+    width: 15vw;
+    height: 5vh;
+    border: none;
+    color: white;
+    background-color: var(--secondary-color);
+    box-shadow: 1px 3px 8px black;
+    cursor: pointer;
+    margin:auto;
+}
+
+.cancel {
+background-color: white;
+  box-shadow: 1px 3px 8px black;
+  color: var(--secondary-color);
+  margin-top: 5%;
+  width: 15vw;
+  height: 5vh;
+  cursor: pointer;
+  border: solid var(--secondary-color);
+}
+
+.confirm-delete {
+    background-color: white;
+    padding: 3%;
+    border-radius: 8px;
+    text-align: center;
+}

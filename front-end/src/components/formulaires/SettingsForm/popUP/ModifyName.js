@@ -3,7 +3,7 @@ import { easyUPDATE } from '../../../../utilities/easyFetch';
 
 import { UserContext } from '../../../../utilities/Context';
 
-import './PopUp.css';
+import '../../../../styles/popups.css';
 
 const ModifyName = ({ updateName }) => {
   const [newName, setNewName] = useState();
@@ -27,10 +27,10 @@ const ModifyName = ({ updateName }) => {
 
   return (
     <div className="pop-up">
-      <h3>Modifer votre prénom :</h3>
-      <input type="text" onChange={(e) => setNewName(e.target.value)} />
-      <button onClick={() => updateName(false)}>ANNULER</button>
-      <button onClick={() => changeName()}>ENREGISTRER</button>
+      <h3 className="popup-header">Modifer votre prénom :</h3>
+      <input className="popup-text" type="text" onChange={(e) => setNewName(e.target.value)} />
+      <button className="validate-popup cancel" onClick={() => updateName(false)}>ANNULER</button>
+      <button className="validate-popup" onClick={() => changeName()}>ENREGISTRER</button>
     </div>
   );
 };

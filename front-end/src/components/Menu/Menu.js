@@ -19,6 +19,7 @@ const Menu = () => {
       .catch((error) => {});
   }
 
+  console.log(user);
   return (
     <div className="menu show-state">
       <h3 className="menu-title show-state">Mon potager</h3>

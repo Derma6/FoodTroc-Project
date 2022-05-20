@@ -40,7 +40,7 @@ const SignUpFom = () => {
       .then((userCredential) => {
         const uid = userCredential.user.uid;
         const token = userCredential.user.accessToken;
-        const newUser = { uid, name, email, location };
+        const newUser = { uid, name, email, location, stock: [] };
         easyPOST(newUser, `http://localhost:3001/users`, token);
         updateUser({ ...newUser, token });
         return uid;

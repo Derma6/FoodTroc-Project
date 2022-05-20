@@ -12,27 +12,27 @@ import './Stock.css';
 const Stock = () => {
   const { user } = useContext(UserContext);
 
-  const [userStock, setUserStock] = useState([]);
-  const [isDataLoading, setDataLoading] = useState(true);
-  const [error, setError] = useState(false);
+  // const [userStock, setUserStock] = useState([]);
+  const [isDataLoading, setDataLoading] = useState(false);
+  // const [error, setError] = useState(false);
 
-  useEffect(() => {
-    async function fetchData(url) {
-      try {
-        const response = await fetch(url);
-        const data = await response.json();
+  // useEffect(() => {
+  //   async function fetchData(url) {
+  //     try {
+  //       const response = await fetch(url);
+  //       const data = await response.json();
 
-        setUserStock(data);
-      } catch (err) {
-        console.log(err);
-        setError(true);
-      } finally {
-        setDataLoading(false);
-      }
-    }
+  //       setUserStock(data);
+  //     } catch (err) {
+  //       console.log(err);
+  //       setError(true);
+  //     } finally {
+  //       setDataLoading(false);
+  //     }
+  //   }
 
-    fetchData(`http://localhost:3001/userstocks/${user.uid}`);
-  }, []);
+  //   fetchData(`http://localhost:3001/userstocks/${user.uid}`);
+  // }, []);
 
   return (
     <main className="stock">
@@ -42,9 +42,11 @@ const Stock = () => {
         <div className="stock-products">
           {isDataLoading ? (
             <p>En cours de chargement</p>
+          ) : user.stock.length === 0 ? (
+            <p>Vous n'avez pas encore ajouter d'articles.</p>
           ) : (
-            userStock.stock.map((element) => (
-              <StockProductCard key={element._id} data={element} />
+            user.stock.map((element) => (
+              <StockProductCard key={element.id} data={element} />
             ))
           )}
         </div>

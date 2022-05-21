@@ -1,8 +1,10 @@
 import React, { useContext, useState } from 'react';
-import './StockProductCard.css';
-import SeparatorLessMargin from '../SeparatorLessMargin/SeparatorLessMargin';
 import { ProductDataContext, UserContext } from '../../utilities/Context';
 import { easyUPDATE } from '../../utilities/easyFetch';
+
+import './StockProductCard.css';
+import SeparatorLessMargin from '../SeparatorLessMargin/SeparatorLessMargin';
+import 'material-icons/iconfont/material-icons.css';
 
 const StockProductCard = ({ data }) => {
   const { productData } = useContext(ProductDataContext);
@@ -28,18 +30,18 @@ const StockProductCard = ({ data }) => {
   return (
     <div className="stock-card">
       {ask ? (
-        <>
+        <div className="confirm-delete-product">
           <p>Etes-vous sur ?</p>
-          <button onClick={() => popAsk(false)}>Non</button>
-          <button onClick={() => deleteProduct()}>Oui</button>
-        </>
+          <button className="validate-delete" onClick={() => popAsk(false)}>Non</button>
+          <button className="validate-delete" onClick={() => deleteProduct()}>Oui</button>
+        </div>
       ) : (
         <>
           <div className="stock-info">
             <h2>{data.productName}</h2>
-            <SeparatorLessMargin />
+            <button className="delete-product material-icons" onClick={() => popAsk(true)}>clear</button>
           </div>
-          <button onClick={() => popAsk(true)}>X</button>
+          <SeparatorLessMargin />
           <img alt={data.productName} className="product-picture" src={img} />
         </>
       )}

@@ -29,8 +29,8 @@ const Stock = () => {
             ))
           )}
         </div>
-        <button className="material-icons add-btn">
-          <Link to="/stock/add">add</Link>
+        <button className="add-btn">
+          <Link to="/stock/add">+</Link>
         </button>
       </div>
     </main>

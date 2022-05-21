@@ -9,6 +9,7 @@
   background-color: var(--secondary-color);
   box-shadow: 1px 3px 8px black;
   cursor: pointer;
+  font-weight: 700;
 }
 .inputs {
   display: flex;
@@ -69,4 +70,9 @@
 
 .quantity-text {
   flex-grow: 1;
+}
+
+.form .join-us {
+  color: var(--secondary-color);
+  font-weight: 600;
 }

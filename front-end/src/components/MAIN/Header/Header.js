@@ -23,7 +23,7 @@ const Header = ({ show, showMenu }) => {
         <NavLink activeclassname="active" to="/commentcamarche">
           Comment ça marche ?
         </NavLink>
-        <NavLink activeclassname="active" to="/troquez">
+        <NavLink  to={user ? "/troquez" : "/login"} activeclassname="active">
           Troquez !
         </NavLink>
         {user && (
@@ -54,8 +54,8 @@ const Header = ({ show, showMenu }) => {
       ) : (
         <Link
           to="/login"
-          style={{ textDecoration: 'underline' }}
           className="login-menu-button"
+          id="connexion"
         >
           Connexion
         </Link>

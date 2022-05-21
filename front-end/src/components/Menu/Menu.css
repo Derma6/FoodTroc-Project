@@ -1,5 +1,6 @@
 .menu {
   background-color: white;
+  font-weight: 500; 
   border-radius: 10px;
   display: grid;
   gap: 2vh;
@@ -15,6 +16,7 @@
 }
 .menu-container {
   display: flex;
+  align-items: center;
 }
 .menu-info-user {
   display: flex;
@@ -33,6 +35,7 @@
   background-color: var(--secondary-color);
   box-shadow: 1px 3px 8px black;
   cursor: pointer;
+  font-weight: 600;
 }
 
 .menu img {

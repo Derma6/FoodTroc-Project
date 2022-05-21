@@ -26,11 +26,16 @@
 .add-btn {
   background-color: var(--secondary-color);
   border: none;
-  padding: 1.5%;
-  border-radius: 50%;
-  font-size: 3.5rem;
+  padding: 0 1.5% 0 1.5%;
+  border-radius: 20%;
+  font-size: 3rem;
   cursor: pointer;
   align-self: flex-end;
+  transition: 300ms;
+}
+
+.add-btn:hover {
+  background-color: var(--primary-color);
 }
 
 .my-stock a {

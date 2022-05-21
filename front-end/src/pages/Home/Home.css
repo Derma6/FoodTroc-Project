@@ -36,10 +36,14 @@
 }
 .second-section-home {
   text-align: justify;
-  width: 75%;
+  width: 45%;
   margin: auto;
 }
 h2 {
   text-align: center;
   margin: 30px;
+}
+
+.bold {
+  font-weight: bold;
 }

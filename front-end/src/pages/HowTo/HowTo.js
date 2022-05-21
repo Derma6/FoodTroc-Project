@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 // import baniere from '../../styles/images/fruitsveggies.png';
 import Separator from '../../components/Separator/Separator';
 import people from '../../styles/images/people_fruits.jpg'
@@ -8,6 +8,11 @@ import basket from '../../styles/images/fruit_basket.jpg'
 import './HowTo.css';
 
 const HowTo = () => {
+
+  useEffect(() => {
+    document.title = "Comment ça marche ? - FoodTroc";  
+  }, []);
+
   return (
     <main>
       <div className="baniere"></div>

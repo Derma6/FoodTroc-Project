@@ -9,26 +9,21 @@ const Troc = () => {
   const { user } = useContext(UserContext);
 
   const [research, setResearch] = useState();
-  const [area, setArea] = useState(20000);
+  const [area, setArea] = useState(20);
   const [city, setCity] = useState();
 
   useEffect(() => {
     setCity([]);
-    async function fetchData(latitude, longitude, area) {
+    async function fetchData(area) {
       const response = await fetch(
-        `https://datanova.laposte.fr/api/records/1.0/search/?dataset=laposte_hexasmal&q=&rows=500&geofilter.distance=${latitude}%2C+${longitude}%2C+${area}`
+        `http://localhost:3001/users?uid=${user.uid}&rayon=${area}`
       );
       const data = await response.json();
 
-      const city = [];
-
-      data.records.map((element) =>
-        city.push(element.fields.nom_de_la_commune)
-      );
-      setCity(city);
+      console.log(data);
     }
 
-    fetchData(user.gpsCoordinates[0], user.gpsCoordinates[1], area);
+    fetchData(area);
   }, [user, area]);
 
   console.log(city);
@@ -37,6 +32,16 @@ const Troc = () => {
     <main className="troc-page">
       <section className="troc-filter-container">
         <input type="text" placeholder="Rechercher un fruit ou un légume..." />
+        <select label="area" onChange={(e) => setArea(e.target.value)}>
+          <option value={5}>5 kms</option>
+          <option value={10}>10 kms</option>
+          <option value={15}>15 kms</option>
+          <option value={20} selected>
+            20 kms
+          </option>
+          <option value={25}>25 kms</option>
+          <option value={30}>30 kms</option>
+        </select>
       </section>
       <section>
         <div className="troc">

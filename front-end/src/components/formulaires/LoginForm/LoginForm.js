@@ -30,20 +30,24 @@ const LoginForm = () => {
 
     
     if (loginError) return
-
+    
     setDataLoading(true);
     
     const auth = getAuth();
-
+    
     signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const uid = userCredential.user.uid;
-        const token = userCredential.user.accessToken;
-        getUser(uid, token);
+    .then((userCredential) => {
+      const uid = userCredential.user.uid;
+      const token = userCredential.user.accessToken;
+      getUser(uid, token);
         return uid;
       })
       .then((uid) => {
-        uid && navigate('/', { replace: true });
+        if (document.referrer !== "http://localhost:3000/troquez") {
+          uid && navigate('/', { replace: true });
+        } else {
+          uid && navigate('/troquez', { replace: true });
+        }
         setDataLoading(false);
       })
       .catch((error) => {

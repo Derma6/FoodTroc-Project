@@ -23,21 +23,21 @@ const SettingsForm = ({
       <SeparatorLessMargin />
       <div className="container">
         <span className="settings-category">Prénom : </span>
-        <span>{user.name}</span>
+        <span className="user-setting-entry">{user.name}</span>
         <button className="modify-button" onClick={() => updateName(true)}>
           Modifier
         </button>
       </div>
       <div className="container">
         <span className="settings-category">Email : </span>
-        <span>{user.email}</span>
+        <span className="user-setting-entry">{user.email}</span>
         <button className="modify-button" onClick={() => updateEmailLoc(true)}>
           Modifier
         </button>
       </div>
       <div className="container">
         <span className="settings-category">Localisation : </span>
-        <span>{user.location}</span>
+        <span className="user-setting-entry">{user.location}</span>
         <button className="modify-button" onClick={() => updateLocation(true)}>
           Modifier
         </button>

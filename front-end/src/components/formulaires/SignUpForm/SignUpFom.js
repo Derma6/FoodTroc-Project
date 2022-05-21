@@ -15,6 +15,7 @@ import SeparatorLessMargin from '../../SeparatorLessMargin/SeparatorLessMargin';
 //--------------------IMPORT CSS--------------------//
 import '../../../styles/forms.css';
 import { useNavigate } from 'react-router-dom';
+import validRegex from '../../../utilities/regex/regex'
 
 const SignUpFom = () => {
   const [name, setName] = useState();
@@ -45,8 +46,7 @@ const SignUpFom = () => {
     },
   };
 
-  const validRegex =
-    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
 
   function signUp() {
     if (passwMatch) return setPasswMatch(true);

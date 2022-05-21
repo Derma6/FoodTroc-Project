@@ -1,22 +1,35 @@
 import React, { useContext, useRef, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import SeparatorLessMargin from '../../SeparatorLessMargin/SeparatorLessMargin';
 
 import '../../../styles/forms.css';
 import { UserContext } from '../../../utilities/Context';
 import emailjs from '@emailjs/browser';
+import validRegex from '../../../utilities/regex/regex'
 
 
 const Contact = () => {
   const { user } = useContext(UserContext);
+  const emailCreate = document.querySelector(".emailCreate")
 
  // ---------------------------- EMAILJS ----------------------------------------------- //
   const form = useRef();
   const [emailStatus, setEmailStatus] = useState()
-  const navigate = useNavigate();
+  const [invalidEmail, setInvalidEmail] = useState();
 
+
+  function validEmailContact() {
+    if (emailCreate.value.match(validRegex)) {
+      setInvalidEmail(false);
+    } else {
+      setInvalidEmail(true);
+    }
+  }
 
   const sendEmail = () => {
+    
+    validEmailContact()
+    if (invalidEmail) return
 
     !user ? (
       emailjs.sendForm('service_rr6dhnc', 'template_mhedlzq', form.current, 'qD5WRLIvKcOyPw8Zx')
@@ -56,11 +69,16 @@ const Contact = () => {
         <h1>Contact</h1>
         <SeparatorLessMargin />
         <p>
-          Vous avez un compte ? <Link to="/login">Connectez-vous</Link>
+          Vous avez un compte ? <Link className="join-us" to="/login">Connectez-vous</Link>
         </p>
         <form ref={form} className="inputs">
           <input type="text" name="user_name" placeholder="PRÉNOM" />
-          <input type="email" name="user_email" placeholder="EMAIL" />
+          <input type="email" name="user_email" className="emailCreate" placeholder="EMAIL" />
+          {invalidEmail && (
+          <h4 style={{ margin: '3% 0 0% 0', color: 'darkgreen' }}>
+            Veuillez entrer une adresse mail valide
+          </h4>
+        )}
           <input type="text" name="user_message_subject" placeholder="OBJET DU MESSAGE" />
           <textarea type="text" name="user_message" rows="10" placeholder="VOTRE MESSAGE"></textarea>
         </form>

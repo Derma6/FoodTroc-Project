@@ -44,3 +44,9 @@
 .settings-category {
   font-weight: bold;
 }
+
+.user-setting-entry {
+  background-color: rgb(248, 220, 201);
+  padding: 1% 2% 1% 4%;
+  border-radius: 8px;
+}

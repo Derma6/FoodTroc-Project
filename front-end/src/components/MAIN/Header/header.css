@@ -23,7 +23,6 @@ header {
 header a {
   text-decoration: none;
   color: black;
-  font-weight: 500;
 }
 .header-user {
   display: flex;
@@ -39,7 +38,7 @@ header a {
 nav a {
   margin: 60px;
   padding-bottom: 10px;
-  font-weight: 500;
+  font-weight: 600;
 }
 .active {
   color: var(--primary-color);

@@ -35,7 +35,8 @@ const Home = () => {
       <section className="second-section-home">
         <h2>Nos valeurs</h2>
         <p>
-          Je clique, je troque ! En seulement 2 clics, FOOD TROC offre aux
+          <span className="bold">Je clique, je troque ! </span>
+          En seulement 2 clics, FOOD TROC offre aux
           particuliers d’échanger les fruits et légumes de leurs potagers, ce
           qui permet aux jardiniers de troquer de manière régulière et ainsi
           éviter le gaspillage.

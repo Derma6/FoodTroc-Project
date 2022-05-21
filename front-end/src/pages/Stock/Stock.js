@@ -10,6 +10,11 @@ import 'material-icons/iconfont/material-icons.css';
 import './Stock.css';
 
 const Stock = () => {
+
+  useEffect(() => {
+    document.title = "Mon stock - FoodTroc";  
+  }, []);
+
   const { user } = useContext(UserContext);
   const isDataLoading = false;
 

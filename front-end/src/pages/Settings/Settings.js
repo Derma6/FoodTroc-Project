@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import SettingsForm from '../../components/formulaires/SettingsForm/SettingsForm';
 
 import ModifyName from '../../components/formulaires/SettingsForm/popUP/ModifyName';
@@ -14,6 +14,11 @@ import { auth, onAuthStateChanged } from '../../utilities/firebase';
 import { useNavigate } from 'react-router-dom';
 
 const Settings = () => {
+
+  useEffect(() => {
+    document.title = "Paramètres - FoodTroc";  
+  }, []);
+
   const navigate = useNavigate();
   onAuthStateChanged(auth, (user) => {
     if (!user) {

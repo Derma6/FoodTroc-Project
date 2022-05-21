@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 import add from '../../styles/images/add.png';
 import search from '../../styles/images/search.png';
@@ -10,6 +10,11 @@ import './Home.css';
 import Separator from '../../components/Separator/Separator';
 
 const Home = () => {
+
+  useEffect(() => {
+    document.title = "FoodTroc";  
+  }, []);
+
   return (
     <main>
       <h1 className="home-title">Echangez vos récoltes !</h1>

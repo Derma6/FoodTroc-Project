@@ -13,6 +13,10 @@ const Troc = () => {
   const [city, setCity] = useState();
 
   useEffect(() => {
+    document.title = "Troquez - FoodTroc";  
+  }, []);
+
+  useEffect(() => {
     setCity([]);
     async function fetchData(latitude, longitude, area) {
       const response = await fetch(

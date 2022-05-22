@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import ProductCard from '../../components/ProductCard/ProductCard';
+import ProfilCard from '../../components/ProfilCard/ProfilCard';
 
 import { UserContext } from '../../utilities/Context';
 
@@ -8,15 +9,18 @@ import './Troc.css';
 const Troc = () => {
   const { user } = useContext(UserContext);
 
+  const [data, setData] = useState();
   const [research, setResearch] = useState();
   const [area, setArea] = useState(20);
   const [city, setCity] = useState();
+  const [isDataLoading, setDataLoading] = useState(true);
 
   useEffect(() => {
-    document.title = "Troquez - FoodTroc";  
+    document.title = 'Troquez - FoodTroc';
   }, []);
 
   useEffect(() => {
+    setDataLoading(true);
     setCity([]);
     async function fetchData(area) {
       const response = await fetch(
@@ -24,13 +28,12 @@ const Troc = () => {
       );
       const data = await response.json();
 
-      console.log(data);
+      setData(data);
+      setDataLoading(false);
     }
 
     fetchData(area);
   }, [user, area]);
-
-  console.log(city);
 
   return (
     <main className="troc-page">
@@ -49,7 +52,16 @@ const Troc = () => {
       </section>
       <section>
         <div className="troc">
-          <ProductCard />
+          {isDataLoading ? (
+            <p>En cours de chargement</p>
+          ) : (
+            data.map(
+              (troqueur) => <ProfilCard troqueur={troqueur} />
+              // user.stock.map((product, user) => (
+              //   <ProductCard user={user} data={product} />
+              // ))
+            )
+          )}
         </div>
       </section>
     </main>

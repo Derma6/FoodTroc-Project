@@ -8,7 +8,7 @@
   line-height: 75vh;
   text-align: center;
   color: white;
-  font-size: 70px;
+  font-size: clamp(3em,4em, 6em);
   font-weight: 400;
 }
 .first-section-home {
@@ -46,4 +46,39 @@ h2 {
 
 .bold {
   font-weight: bold;
+}
+
+.alt-menu {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.3em;
+  padding: 5%;
+  gap: 10%;
+  position: absolute;
+  top: 99%;
+  height: 25vh;
+  background-color: var(--secondary-color-lighter);
+  transition: 300ms;
+}
+
+.alt-user-menu {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.3em;
+  padding: 5%;
+  gap: 10%;
+  position: absolute;
+  top: 99%;
+  background-color: var(--secondary-color-lighter);
+  transition: 300ms;
+}
+
+.alt-menu a:hover {
+  color: var(--secondary-color) 
+}
+
+@media all and (max-width: 950px) {
+  .home-title {
+    font-size: 3em;
+  }
 }

@@ -11,15 +11,21 @@ header {
 .login-menu-button {
   width: fit-content;
   color: var(--primary-color);
-  /* margin-bottom: 20px; */
   font-weight: bold;
   font-size: 1.3em;
-  /* cursor: pointer; */
 }
 .login-menu-button:hover {
   transition: 0.2s;
   color: var(--secondary-color);
 }
+
+.login-side-menu-button {
+  width: fit-content;
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
 header a {
   text-decoration: none;
   color: black;
@@ -51,6 +57,11 @@ header h2:hover {
   cursor: pointer;
 }
 
+.responsive-menu {
+  display: none;
+}
+
+
 @media all and (max-width: 1800px) {
   nav a {
     margin: 38px;
@@ -64,5 +75,23 @@ header h2:hover {
 @media all and (max-width: 1200px) {
   nav a {
     margin: 15px;
+  }
+}
+
+@media all and (max-width: 950px) {
+  nav, .header-user, .login-menu-button{
+   display: none;
+  }
+
+  header {
+    padding: 15px 2% 15px 2%;
+    display: flex;
+    justify-content:space-between;
+  }
+
+  .responsive-menu {
+    display: block;
+    width: clamp(35px, 5vw, 600px);
+    cursor: pointer;
   }
 }

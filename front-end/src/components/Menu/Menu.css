@@ -23,6 +23,12 @@
   flex-direction: column;
   margin-left: 5%;
 }
+
+.side-menu-info-user {
+  display: flex;
+  align-items: center;
+  gap: 5%;
+}
 .menu-email {
   font-size: 0.8em;
 }

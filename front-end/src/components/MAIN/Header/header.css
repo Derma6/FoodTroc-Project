@@ -57,10 +57,84 @@ header h2:hover {
   cursor: pointer;
 }
 
+
+
+
+.alt-menu {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.3em;
+  padding: 5%;
+  gap: 10%;
+  position: absolute;
+  top: 99%;
+  background-color: var(--secondary-color-lighter);
+}
+
+.alt-menu a {
+  margin-bottom: 5%;
+}
+
+.alt-user-menu {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.3em;
+  padding: 5%;
+  gap: 10%;
+  position: absolute;
+  top: 99%;
+  background-color: var(--secondary-color-lighter);
+}
+
+.alt-menu a:hover {
+  color: var(--secondary-color) 
+}
+.side-user-menu a:hover{
+  color: var(--secondary-color) 
+}
+
+.side-user-menu {
+  font-size: 0.9em;
+  display: flex;
+  gap: 5%;
+  flex-direction: column;
+  height: 130px;
+  width: 15vw;
+  align-items: flex-start;
+}
+
+.side-user-menu a, span {
+  margin-bottom: 5%;
+}
+
+.log-out-side-btn {
+  margin-top: 10%;
+  border: none;
+  color: white;
+  height: 35px;
+  padding: 3%;
+  background-color: var(--secondary-color);
+  box-shadow: 1px 3px 8px black;
+  cursor: pointer;
+  font-weight: 600;
+}
+
 .responsive-menu {
   display: none;
 }
 
+.alt-menu, .alt-user-menu {
+  display: none;
+}
+
+.user-side-logo {
+  display: none;
+  align-items: center;
+  gap: 5%;
+  font-size: 1.3em;
+  color: var(--primary-color);
+  font-weight: 600;
+}
 
 @media all and (max-width: 1800px) {
   nav a {
@@ -78,9 +152,18 @@ header h2:hover {
   }
 }
 
-@media all and (max-width: 950px) {
+@media all and (max-width: 1110px) {
   nav, .header-user, .login-menu-button{
    display: none;
+  }
+
+  .user-side-logo {
+    display: flex;
+    cursor: pointer;
+  }
+
+  #foodtroc-logo {
+    margin-left: -8%;
   }
 
   header {
@@ -88,10 +171,12 @@ header h2:hover {
     display: flex;
     justify-content:space-between;
   }
-
   .responsive-menu {
     display: block;
-    width: clamp(35px, 5vw, 600px);
+    width: clamp(35px, 4.5vw, 600px);
     cursor: pointer;
+  }
+  .alt-menu, .alt-user-menu {
+    display: flex;
   }
 }

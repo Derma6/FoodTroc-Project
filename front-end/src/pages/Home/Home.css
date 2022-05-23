@@ -48,34 +48,6 @@ h2 {
   font-weight: bold;
 }
 
-.alt-menu {
-  display: flex;
-  flex-direction: column;
-  font-size: 1.3em;
-  padding: 5%;
-  gap: 10%;
-  position: absolute;
-  top: 99%;
-  height: 25vh;
-  background-color: var(--secondary-color-lighter);
-  transition: 300ms;
-}
-
-.alt-user-menu {
-  display: flex;
-  flex-direction: column;
-  font-size: 1.3em;
-  padding: 5%;
-  gap: 10%;
-  position: absolute;
-  top: 99%;
-  background-color: var(--secondary-color-lighter);
-  transition: 300ms;
-}
-
-.alt-menu a:hover {
-  color: var(--secondary-color) 
-}
 
 @media all and (max-width: 950px) {
   .home-title {

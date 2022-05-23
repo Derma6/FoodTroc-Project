@@ -2,7 +2,6 @@ import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { UserContext } from '../../../utilities/Context';
 
-import SeparatorMenu from '../../../components/SeparatorMenu/SeparatorMenu'
 import Logo from '../../../styles/images/foodtroc_logo.png';
 import Menu from '../../Menu/Menu';
 import jardinage from '../../../styles/images/jardinage.png';
@@ -37,19 +36,26 @@ const Header = ({ show, showMenu }) => {
 
   return (
     <header>
-      <img 
-      className="responsive-menu" 
-      id="user-icon" 
-      style={sideMenu.userIcon}
+      <div 
+      className="user-side-logo"
       onClick={() => {
         setDisplayUserMenu(!displayUserMenu)
         if(displayMenu) {
           setDisplayMenu(!displayMenu)}
-        }
-      }
-      src={userIcon} 
-      alt="user icon"
-      />
+      }}
+      >
+        <img 
+        className="responsive-menu" 
+        id="user-icon" 
+        style={sideMenu.userIcon}
+        
+        src={userIcon} 
+        alt="user icon"
+        />
+        { user && (
+          <p>{user.name}</p>
+        )}
+      </div>
       <Link to="/">
         <img 
         id="foodtroc-logo"
@@ -141,13 +147,10 @@ const Header = ({ show, showMenu }) => {
           {user ? (
           <div className="side-user-menu">
             <div className="side-menu-info-user">
-              <img src={jardinage} style={{width: "4vw"}} alt="logo jardinnage" className="show-state" />
-              <span className="menu-name show-state">{user.name}</span>
             </div>
-            <SeparatorMenu />
             <Link to="/parametres">Paramètres</Link>
             <Link to="/stock">Mon stock</Link>
-            <button className="log-out-btn show-state">
+            <button className="log-out-side-btn show-state">
             SE DÉCONNECTER
             </button>
           </div>
@@ -155,6 +158,7 @@ const Header = ({ show, showMenu }) => {
           <Link
             to="/login"
             className="login-side-menu-button"
+            // onClick=
           >
             Connexion
           </Link>

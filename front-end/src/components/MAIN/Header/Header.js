@@ -37,21 +37,21 @@ const Header = ({ show, showMenu }) => {
   return (
     <header>
       <div 
-      className="user-side-logo"
-      onClick={() => {
-        setDisplayUserMenu(!displayUserMenu)
-        if(displayMenu) {
-          setDisplayMenu(!displayMenu)}
-      }}
+        className="user-side-logo"
+        onClick={() => {
+          setDisplayUserMenu(!displayUserMenu)
+          if(displayMenu) {
+            setDisplayMenu(!displayMenu)}
+        }}
       >
-        <img 
+      <img 
         className="responsive-menu" 
         id="user-icon" 
         style={sideMenu.userIcon}
         
         src={userIcon} 
         alt="user icon"
-        />
+      />
         { user && (
           <p>{user.name}</p>
         )}

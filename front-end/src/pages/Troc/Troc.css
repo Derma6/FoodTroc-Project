@@ -6,7 +6,7 @@
   background-image: url('../../styles/images/background_fruitsveggies.webp');
 }
 .troc-filter-container {
-  background-image: url('../../styles/images/pano_fruitsveggies.png');
+  background-image: url('../../styles/images/pano_fruitsveggies_lessOpacity.png');
   background-color: white;
   display: grid;
   grid-template-columns: repeat(2, 1fr);

@@ -53,8 +53,8 @@ const Contact = () => {
         <h1>Contact</h1>
         <SeparatorLessMargin />
         <form ref={form} className="inputs">
-          <input style={{display: "none"}} name="user_uid" value={user.uid} type="text"/>
-          <input style={{display: "none"}} name="user_name" value={user.name} type="text"/>
+          <input style={{display: "none"}} name="user_uid" readOnly value={user.uid} type="text"/>
+          <input style={{display: "none"}} name="user_name" readOnly value={user.name} type="text"/>
           <input name="user_message_subject" type="text" placeholder="OBJET DU MESSAGE" />
           <textarea name="user_message" type="text" rows="10" placeholder="VOTRE MESSAGE"></textarea>
         </form>

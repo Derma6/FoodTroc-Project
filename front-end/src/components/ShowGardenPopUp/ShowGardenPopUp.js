@@ -29,12 +29,8 @@ const ShowGardenPopUp = ({ troqueur, showGarden }) => {
       </div>
       <div className="pop-up-garden-stock-container">
         {troqueur.stock.map((product) => (
-          <div key={Math.random()} className="product-container">
-            <div className="pop-up-garden-product-description">
-              <p>{product.productName}</p>
-              <p>{product.quantity}</p>
-              <p>{product.freshness}</p>
-            </div>
+          <div key={Math.random()} className="pop-up-garden-product-container">
+            <h3>{product.productName}</h3>
             <img
               src={
                 productData.find(
@@ -46,6 +42,10 @@ const ShowGardenPopUp = ({ troqueur, showGarden }) => {
               height={'70px'}
               className="product-img"
             />
+            <div className="pop-up-garden-product-description">
+              <p>{product.quantity}</p>
+              <p>{product.freshness}</p>
+            </div>
           </div>
         ))}
       </div>

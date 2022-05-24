@@ -17,7 +17,8 @@
   width: 20vw;
   flex-direction: column;
 }
-.inputs input, select {
+.inputs input,
+.select-form {
   /* margin-top: 10%; */
   background-color: white;
   height: 4.5vh;

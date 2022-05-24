@@ -14,8 +14,8 @@ const AddProductForm = () => {
   const [quantity, setQuantity] = useState();
   const [description, setDescription] = useState();
 
-  const quantityText = document.querySelector(".quantity-text")
-  const quantityType = document.querySelector(".quantity-type")
+  const quantityText = document.querySelector('.quantity-text');
+  const quantityType = document.querySelector('.quantity-type');
 
   const navigate = useNavigate();
 
@@ -43,7 +43,7 @@ const AddProductForm = () => {
       <SeparatorLessMargin />
       <div className="inputs">
         <select
-          className="select-product"
+          className="select-product select-form"
           label="Produit"
           onChange={(e) => setProductName(e.target.value)}
         >
@@ -55,6 +55,7 @@ const AddProductForm = () => {
           ))}
         </select>
         <select
+          className="select-form"
           label="freshness"
           onChange={(e) => setFreshness(e.target.value)}
         >
@@ -70,10 +71,12 @@ const AddProductForm = () => {
             id="object"
             placeholder="QUANTITÉ"
           />
-          <select 
-          onChange={(e) => setQuantity(`${quantityText.value} ${quantityType.value}`)}
-          className="quantity-type"
-          label="quantityType"
+          <select
+            onChange={(e) =>
+              setQuantity(`${quantityText.value} ${quantityType.value}`)
+            }
+            className="quantity-type select-form"
+            label="quantityType"
           >
             <option value="selectType">Type</option>
             <option value="Kilo(s)">Kilo(s)</option>

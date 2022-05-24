@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import Loader from '../../components/Loader/Loader';
 import ProductCard from '../../components/ProductCard/ProductCard';
 import ProfilCard from '../../components/ProfilCard/ProfilCard';
 
@@ -27,7 +28,6 @@ const Troc = () => {
         `http://localhost:3001/users?uid=${user.uid}&rayon=${area}`
       );
       const data = await response.json();
-
       setData(data);
       setDataLoading(false);
     }
@@ -38,31 +38,44 @@ const Troc = () => {
   return (
     <main className="troc-page">
       <section className="troc-filter-container">
-        <input type="text" placeholder="Rechercher un fruit ou un légume..." />
-        <select label="area" onChange={(e) => setArea(e.target.value)}>
-          <option value={5}>5 kms</option>
-          <option value={10}>10 kms</option>
-          <option value={15}>15 kms</option>
-          <option value={20} selected>
-            20 kms
-          </option>
-          <option value={25}>25 kms</option>
-          <option value={30}>30 kms</option>
-        </select>
+        <input
+          className="search-bar"
+          type="text"
+          placeholder="Rechercher un fruit ou un légume..."
+          onChange={(e) => {
+            setResearch(e.target.value);
+          }}
+        />
+        <div className="select-area">
+          <label htmlFor="select-area" id="select-label">
+            Rayon autour de chez vous :{' '}
+          </label>
+          <select
+            id="select-area"
+            label="area"
+            onChange={(e) => setArea(e.target.value)}
+          >
+            <option value={5}>5 kms</option>
+            <option value={10}>10 kms</option>
+            <option value={15}>15 kms</option>
+            <option value={20} selected>
+              20 kms
+            </option>
+            <option value={25}>25 kms</option>
+            <option value={30}>30 kms</option>
+          </select>
+        </div>
       </section>
       <section>
-        <div className="troc">
-          {isDataLoading ? (
-            <p>En cours de chargement</p>
-          ) : (
-            data.map(
-              (troqueur) => <ProfilCard troqueur={troqueur} />
-              // user.stock.map((product, user) => (
-              //   <ProductCard user={user} data={product} />
-              // ))
-            )
-          )}
-        </div>
+        {isDataLoading ? (
+          <Loader />
+        ) : (
+          <div className="troc">
+            {data.map((troqueur) => (
+              <ProfilCard troqueur={troqueur} research={research} />
+            ))}
+          </div>
+        )}
       </section>
     </main>
   );

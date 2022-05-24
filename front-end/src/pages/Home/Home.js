@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 
 import add from '../../styles/images/add.png';
 import search from '../../styles/images/search.png';
@@ -10,9 +10,8 @@ import './Home.css';
 import Separator from '../../components/Separator/Separator';
 
 const Home = () => {
-
   useEffect(() => {
-    document.title = "FoodTroc";  
+    document.title = 'FoodTroc';
   }, []);
 
   return (
@@ -38,13 +37,12 @@ const Home = () => {
       </section>
       <Separator />
       <section className="second-section-home">
-        <h2>Nos valeurs</h2>
+        <h2 className="second-section-title">Nos valeurs</h2>
         <p>
           <span className="bold">Je clique, je troque ! </span>
-          En seulement 2 clics, FOOD TROC offre aux
-          particuliers d’échanger les fruits et légumes de leurs potagers, ce
-          qui permet aux jardiniers de troquer de manière régulière et ainsi
-          éviter le gaspillage.
+          En seulement 2 clics, FOOD TROC offre aux particuliers d’échanger les
+          fruits et légumes de leurs potagers, ce qui permet aux jardiniers de
+          troquer de manière régulière et ainsi éviter le gaspillage.
           <br />
           <br /> FOOD TROC veut favoriser la consommation de proximité et
           inventer un nouveau lien social autour du bon goût retrouvé des

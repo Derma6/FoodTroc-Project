@@ -1,6 +1,7 @@
 :root {
   --primary-color: rgb(5, 128, 1);
   --secondary-color: rgb(255, 70, 16);
+  --text-color: #281d1d;
   --secondary-color-lighter: rgb(255, 231, 204);
   --grey-color-form: rgb(248, 220, 201);
 }

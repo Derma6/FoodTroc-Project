@@ -14,7 +14,7 @@ const HowTo = () => {
   }, []);
 
   return (
-    <main>
+    <main className="howto">
       <div className="baniere"></div>
       <h1 className="howTo-title">Comment ça marche ?</h1>
       <Separator />

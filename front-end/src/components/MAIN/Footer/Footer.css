@@ -32,10 +32,19 @@ footer {
    transform: scale(0.45) 
 }
 
+.social img:hover {
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+}
+
 .legal-text {
     display: flex;
     align-items: center;
     gap: 15%;
+}
+
+.legal-text a:hover {
+    text-decoration: underline;
 }
 
 .footer-text {

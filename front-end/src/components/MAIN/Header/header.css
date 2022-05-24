@@ -160,6 +160,7 @@ header h2:hover {
   .user-side-logo {
     display: flex;
     cursor: pointer;
+    font-weight: 700;
   }
 
   #foodtroc-logo {

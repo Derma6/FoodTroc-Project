@@ -2,11 +2,11 @@
   background-color: white;
   background-image: url('../../styles/images/pano_fruitsveggies_lessOpacity.png');
   border-radius: 20px;
-  width: 100%;
+  min-width: 100%;
   padding: 15px;
 }
 .info-container {
-  width: 75%;
+  /* width: 75%; */
   margin-bottom: 1em;
 }
 .troqueur-name {
@@ -20,7 +20,7 @@
   display: flex;
   align-items: center;
 }
-.location-container span {
+.profil-card-location {
   margin-left: 0.7em;
 }
 
@@ -30,6 +30,11 @@
   justify-items: center;
   gap: 0.8em;
   min-height: 200px;
+  width: max-content;
+  margin: auto;
+}
+.product-container {
+  width: max-content;
 }
 .product-img {
   border-radius: 10px;
@@ -46,6 +51,7 @@
 }
 .profil-card-btn {
   display: flex;
+  bottom: 0;
 }
 .contact-btn {
   margin: 1em;

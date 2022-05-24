@@ -14,8 +14,8 @@ const LoginForm = () => {
   const { user, updateUser } = useContext(UserContext);
   const { isDataLoading, setDataLoading } = useContext(DataLoading);
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
   const [loginError, setLoginError] = useState();
 
   const navigate = useNavigate();
@@ -27,26 +27,25 @@ const LoginForm = () => {
   }
 
   function logIn() {
+    // setLoginError(false);
+    // if (loginError) return;
 
-    
-    if (loginError) return
-    
     setDataLoading(true);
-    
+
     const auth = getAuth();
-    
+
     signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      const uid = userCredential.user.uid;
-      const token = userCredential.user.accessToken;
-      getUser(uid, token);
+      .then((userCredential) => {
+        const uid = userCredential.user.uid;
+        const token = userCredential.user.accessToken;
+        getUser(uid, token);
         return uid;
       })
       .then((uid) => {
-        if (document.referrer !== "http://localhost:3000/troquez") {
-          uid && navigate('/', { replace: true });
-        } else {
+        if (document.referrer !== 'http://localhost:3000/troquez') {
           uid && navigate('/troquez', { replace: true });
+        } else {
+          uid && navigate('/', { replace: true });
         }
         setDataLoading(false);
       })
@@ -55,11 +54,15 @@ const LoginForm = () => {
         const errorCode = error.code;
         const errorMessage = error.message;
         setLoginError(true);
+        setDataLoading(false);
       });
   }
 
   return (
-    <div className="form">
+    <div
+      className="form"
+      onKeyDown={(e) => e.key === 'Enter' && logIn(email, password)}
+    >
       <h1>Connexion</h1>
       <SeparatorLessMargin />
       <p>

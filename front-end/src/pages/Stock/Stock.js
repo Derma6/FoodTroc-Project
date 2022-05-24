@@ -27,7 +27,7 @@ const Stock = () => {
           {isDataLoading ? (
             <p>En cours de chargement</p>
           ) : user.stock.length === 0 ? (
-            <p>Vous n'avez aucun article dans votre stock !</p>
+            <p>Rien à proposer dans votre jardin !</p>
           ) : (
             user.stock.map((element) => (
               <StockProductCard key={element.id} data={element} />

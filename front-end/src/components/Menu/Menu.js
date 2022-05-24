@@ -4,28 +4,27 @@ import { UserContext } from '../../utilities/Context';
 import { auth, signOut } from '../../utilities/firebase';
 import SeparatorMenu from '../SeparatorMenu/SeparatorMenu';
 
+
 import jardinnage from '../../styles/images/jardinage.png';
 
 import './Menu.css';
 
 const Menu = () => {
+
   const { user, updateUser } = useContext(UserContext);
-  const navigate = useNavigate()
+const navigate = useNavigate()
 
-  function logOut() {
-    signOut(auth)
-      .then(() => {
-        updateUser(false);
-      })
-      .then(() => {
-        navigate('/', { replace: true })
-      })
-      .catch((error) => {});
-  }
+function logOut() {
+  signOut(auth)
+    .then(() => {
+      updateUser(false);
+    })
+    .then(() => {
+      navigate('/', { replace: true })
+    })
+    .catch((error) => {});
+}
 
-  console.log(user);
-
-  console.log(user.token);
   return (
     <div className="menu show-state">
       <h3 className="menu-title show-state">Mon potager</h3>

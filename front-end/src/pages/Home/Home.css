@@ -8,7 +8,7 @@
   line-height: 75vh;
   text-align: center;
   color: white;
-  font-size: 70px;
+  font-size: clamp(3em,4em, 6em);
   font-weight: 400;
 }
 .first-section-home {
@@ -46,4 +46,9 @@
 
 .bold {
   font-weight: bold;
+}
+@media all and (max-width: 950px) {
+  .home-title {
+    font-size: 3em;
+  }
 }

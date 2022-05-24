@@ -10,7 +10,7 @@ footer a {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    gap: 20%;
+    gap: 8%;
     padding: 0.5%;
     height: 10vh;
 }
@@ -18,12 +18,14 @@ footer a {
 footer {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .social {
-    margin-left: -3%;
+    margin-left: -12%;
     display: flex;
-    gap: 20%;
+    gap: 10%;
+    cursor: pointer;
 }
 
 .social img {
@@ -32,7 +34,8 @@ footer {
 
 .legal-text {
     display: flex;
-    gap: 25%;
+    align-items: center;
+    gap: 15%;
 }
 
 .footer-text {
@@ -44,3 +47,24 @@ footer {
     justify-content: center;
     height: 3vh;
 }
+
+.scroll-to-top {
+    background-color: var(--secondary-color);
+    cursor: pointer;
+    padding: 2%;
+    border-radius: 8px;
+}
+
+@media all and (max-width: 950px) {
+    .social-text {
+        gap: 0;
+
+    }
+
+    .legal-text {
+        gap: 8%;
+    }
+    .social {
+        gap: 0;
+    }
+  }

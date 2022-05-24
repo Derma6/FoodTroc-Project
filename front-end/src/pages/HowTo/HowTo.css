@@ -50,6 +50,10 @@
   color: darkgrey;
 }
 
+.howto-main-text {
+  margin: 10% 0 10% 0;
+}
+
 .foodtroc-quote {
   width: 35vw;
 }

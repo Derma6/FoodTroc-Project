@@ -26,6 +26,7 @@ const HowTo = () => {
             <p className="foodtroc-user">Antoine, FoodTrocqueur depuis 1 an</p>
           </div>
         </div>
+        <div className="howto-main-text">
         <p>
           Gratuit, simple d’utilisation et pratique, FOOD TROC est conçu pour
           plaire au plus réticent d’entre nous !
@@ -39,6 +40,7 @@ const HowTo = () => {
           Pour déposer une annonce, on ajoute une description des fruits et
           légumes que l’on souhaite échanger ou vendre, et c’est en ligne !
         </p>
+        </div>
         <div className="image-quote">
           <div className="quote2">
             <p className="foodtroc-quote">« Je ne savais plus quoi faire de mes fruits que je n'utilisais pas. Avec FoodTroc, c'est devenu si simple ! »</p>

@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Loader from '../../components/Loader/Loader';
-import ProductCard from '../../components/ProductCard/ProductCard';
 import ProfilCard from '../../components/ProfilCard/ProfilCard';
 
 import { UserContext } from '../../utilities/Context';

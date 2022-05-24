@@ -57,9 +57,6 @@ header h2:hover {
   cursor: pointer;
 }
 
-
-
-
 .alt-menu {
   display: flex;
   flex-direction: column;
@@ -87,10 +84,10 @@ header h2:hover {
 }
 
 .alt-menu a:hover {
-  color: var(--secondary-color) 
+  color: var(--secondary-color);
 }
-.side-user-menu a:hover{
-  color: var(--secondary-color) 
+.side-user-menu a:hover {
+  color: var(--secondary-color);
 }
 
 .side-user-menu {
@@ -103,7 +100,7 @@ header h2:hover {
   align-items: flex-start;
 }
 
-.side-user-menu a, span {
+.side-user-menu a {
   margin-bottom: 5%;
 }
 
@@ -123,7 +120,8 @@ header h2:hover {
   display: none;
 }
 
-.alt-menu, .alt-user-menu {
+.alt-menu,
+.alt-user-menu {
   display: none;
 }
 
@@ -153,8 +151,10 @@ header h2:hover {
 }
 
 @media all and (max-width: 1110px) {
-  nav, .header-user, .login-menu-button{
-   display: none;
+  nav,
+  .header-user,
+  .login-menu-button {
+    display: none;
   }
 
   .user-side-logo {
@@ -169,14 +169,15 @@ header h2:hover {
   header {
     padding: 15px 2% 15px 2%;
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
   }
   .responsive-menu {
     display: block;
     width: clamp(35px, 4.5vw, 600px);
     cursor: pointer;
   }
-  .alt-menu, .alt-user-menu {
+  .alt-menu,
+  .alt-user-menu {
     display: flex;
   }
 }

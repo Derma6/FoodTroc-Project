@@ -83,7 +83,7 @@ const SignUpFom = () => {
           })
           .then((response) => {
             console.debug(response.message);
-            updateUser(response.data);
+            updateUser({ ...response.data, token });
           })
           .catch((error) => {
             console.error(error);

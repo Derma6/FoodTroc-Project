@@ -1,0 +1,41 @@
+.pop-up-garden {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  left: 50vw;
+  top: 50vh;
+  background-color: white;
+  background-image: url('../../styles/images/pano_fruitsveggies_lessOpacity.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 70vh;
+  /* width: 60vw; */
+  border-radius: 8px;
+  box-shadow: 0 0 0 max(100vh, 100vw) rgba(0, 0, 0, 0.8);
+  padding: 2em;
+}
+.pop-up-garden-header {
+  display: grid;
+}
+.pop-up-garden-header h2 {
+  text-align: center;
+  border-bottom: 3px solid var(--secondary-color);
+  padding: 0.4em;
+}
+.pop-up-garden-header {
+  display: grid;
+  gap: 1em;
+}
+.pop-up-garden-contact-container {
+  display: flex;
+  justify-content: space-around;
+}
+.pop-up-garden-stock-container {
+  margin: 2em auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.5em;
+  overflow-y: scroll;
+  height: 60%;
+}
+.pop-up-garden-product-container {
+}

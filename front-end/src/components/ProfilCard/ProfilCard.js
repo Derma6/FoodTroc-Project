@@ -1,15 +1,17 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { ProductDataContext, UserContext } from '../../utilities/Context';
 
-import SeparatorMenu from '../SeparatorMenu/SeparatorMenu';
+import ShowGardenPopUp from '../ShowGardenPopUp/ShowGardenPopUp';
 
-import img from './pointer.png';
+import img from '../../styles/images/pointer.png';
 
 import './ProfilCard.css';
 
 const ProfilCard = ({ troqueur, research }) => {
   const { user } = useContext(UserContext);
   const { productData } = useContext(ProductDataContext);
+
+  const [popGarden, showGarden] = useState(false);
 
   if (user.uid === troqueur.uid) return;
 
@@ -25,7 +27,7 @@ const ProfilCard = ({ troqueur, research }) => {
         </h2>
         <div className="location-container">
           <img src={img} alt="logo localisation" width={'24px'} />
-          <span>{troqueur.location}</span>
+          <p className="profil-card-location">{troqueur.location}</p>
         </div>
       </div>
       <div className="product">
@@ -53,12 +55,23 @@ const ProfilCard = ({ troqueur, research }) => {
       <div className="profil-card-contact-container">
         {troqueur.stock.length > 6 && <p>...et bien plus !</p>}
         <div className="profil-card-btn">
-          <button className="contact-btn">
+          <button
+            className="contact-btn"
+            onClick={() =>
+              (window.location = `mailto:${troqueur.email}?subject=${user.name} souhaite échanger des fruits et légumes avec vous !`)
+            }
+          >
             CONTACTER {troqueur.name.toUpperCase()}
           </button>
-          <button className="show-me-btn">VOIR SON JARDIN</button>
+          <button className="show-me-btn" onClick={() => showGarden(true)}>
+            VOIR SON JARDIN
+          </button>
         </div>
       </div>
+
+      {popGarden && (
+        <ShowGardenPopUp showGarden={showGarden} troqueur={troqueur} />
+      )}
     </div>
   );
 };

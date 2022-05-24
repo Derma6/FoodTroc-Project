@@ -1,10 +1,13 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {BrowserRouter as Router, Link, Route, Routes} from 'react-router-dom';
+import { UserContext } from '../../../utilities/Context';
 
 import 'material-icons/iconfont/material-icons.css';
 import './Footer.css'
 
 const Footer = () => {
+
+  const { user } = useContext(UserContext);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -53,7 +56,7 @@ const Footer = () => {
         <div className="legal-text">
           <Link to="/signup">ACCUEIL</Link>
           <Link to="/contact">CONTACT</Link>
-          <Link to="/signup">INCRIPTION</Link>
+        { !user &&   <Link to="/signup">INCRIPTION</Link> }
           <h3 onClick={scrollToTop} className="material-icons scroll-to-top">expand_less</h3>
           {/* <Link to="/cgv">CGV</Link> */}
           {/* <Link to="/cookies">COOKIES</Link> */}

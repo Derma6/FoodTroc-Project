@@ -8,6 +8,11 @@
   margin-top: 30px;
   text-align: center;
 }
+
+.howto img {
+  width: 30vw;
+}
+
 .first-section-howto {
   width: 50%;
   margin: 5em auto;
@@ -47,4 +52,9 @@
 
 .foodtroc-quote {
   width: 35vw;
+}
+
+
+@media all and (max-width: 1110px) {
+  
 }

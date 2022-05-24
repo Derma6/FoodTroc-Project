@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../../utilities/Context';
+import { auth, signOut } from '../../../utilities/firebase';
 
 import Logo from '../../../styles/images/foodtroc_logo.png';
 import Menu from '../../Menu/Menu';
@@ -12,10 +13,11 @@ import userIcon from '../../../styles/images/user_icon.png';
 import './header.css';
 
 const Header = ({ show, showMenu }) => {
-  const { user } = useContext(UserContext);
+  const { user, updateUser } = useContext(UserContext);
 
   const [displayMenu, setDisplayMenu] = useState()
-  const [displayUserMenu, setDisplayUserMenu] = useState(true)
+  const [displayUserMenu, setDisplayUserMenu] = useState()
+  // const navigate = useNavigate()
 
   const sideMenu = {
     button: {
@@ -34,6 +36,17 @@ const Header = ({ show, showMenu }) => {
     },
   };
 
+  // function logOut() {
+  //   signOut(auth)
+  //     .then(() => {
+  //       updateUser(false);
+  //     })
+  //     .then(() => {
+  //       navigate('/', { replace: true })
+  //     })
+  //     .catch((error) => {});
+  // }
+
   return (
     <header>
       <div 
@@ -41,7 +54,7 @@ const Header = ({ show, showMenu }) => {
         onClick={() => {
           setDisplayUserMenu(!displayUserMenu)
           if(displayMenu) {
-            setDisplayMenu(!displayMenu)}
+          setDisplayMenu(!displayMenu)}
         }}
       >
       <img 
@@ -158,7 +171,7 @@ const Header = ({ show, showMenu }) => {
           <Link
             to="/login"
             className="login-side-menu-button"
-            // onClick=
+            // onClick={() => logOut()}
           >
             Connexion
           </Link>

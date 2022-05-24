@@ -39,7 +39,7 @@
   width: 45%;
   margin: auto;
 }
-h2 {
+.second-section-title {
   text-align: center;
   margin: 30px;
 }
@@ -47,8 +47,6 @@ h2 {
 .bold {
   font-weight: bold;
 }
-
-
 @media all and (max-width: 950px) {
   .home-title {
     font-size: 3em;

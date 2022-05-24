@@ -1,18 +1,55 @@
+@import '../../styles/theme-variables.css';
+
+/*-----------------------SECTION 1-----------------------*/
+
 .troc-page {
   background-image: url('../../styles/images/background_fruitsveggies.webp');
 }
 .troc-filter-container {
+  background-image: url('../../styles/images/pano_fruitsveggies.png');
   background-color: white;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+  min-height: 8vh;
+  border-top: 1px solid var(--text-color);
 }
+.search-bar {
+  width: 50%;
+  /* margin: 20px; */
+  min-height: 5vh;
+  line-height: 5vh;
+  padding-left: 1em;
+  border: 1.5px solid black;
+  border-radius: 8px;
+}
+.select-area {
+  width: 50%;
+  border: 1.5px solid black;
+  border-radius: 8px;
+  text-align: center;
+  background-color: white;
+  min-height: 5vh;
+  line-height: 5vh;
+}
+#select-label {
+  font-weight: 600;
+}
+#select-area {
+  border: none;
+  font-weight: 600;
+}
+/*-----------------------SECTION 2-----------------------*/
+
 .troc {
-
-    background-image: url("../../styles/images/background_fruitsveggies.webp");
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    justify-items: center;
-    padding: 8% 5% 8% 5%;
-    min-height: 80vh;
-
+  background-image: url('../../styles/images/background_fruitsveggies.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  padding: 5% 2%;
+  min-height: 80vh;
+  gap: 5%;
 }

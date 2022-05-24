@@ -1,3 +1,69 @@
 .profil-card {
   background-color: white;
+  background-image: url('../../styles/images/pano_fruitsveggies_lessOpacity.png');
+  border-radius: 20px;
+  width: 100%;
+  padding: 15px;
+}
+.info-container {
+  width: 75%;
+  margin-bottom: 1em;
+}
+.troqueur-name {
+  font-weight: 400;
+  font-size: 1.2em;
+  border-bottom: 3px solid var(--secondary-color);
+  padding-bottom: 3%;
+  margin-bottom: 3%;
+}
+.location-container {
+  display: flex;
+  align-items: center;
+}
+.location-container span {
+  margin-left: 0.7em;
+}
+
+.product {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  gap: 0.8em;
+  min-height: 200px;
+}
+.product-img {
+  border-radius: 10px;
+}
+
+.profil-card-contact-container {
+  display: grid;
+  margin: 1em;
+  justify-items: center;
+}
+.profil-card-contact-container p {
+  width: 100%;
+  text-align: end;
+}
+.profil-card-btn {
+  display: flex;
+}
+.contact-btn {
+  margin: 1em;
+  width: 50%;
+  height: 3em;
+  box-shadow: 1px 3px 8px black;
+  cursor: pointer;
+  color: var(--secondary-color);
+  background-color: white;
+  border: solid var(--secondary-color);
+}
+.show-me-btn {
+  margin: 1em;
+  width: 50%;
+  height: 3em;
+  box-shadow: 1px 3px 8px black;
+  cursor: pointer;
+  color: white;
+  background-color: var(--secondary-color);
+  border: none;
 }

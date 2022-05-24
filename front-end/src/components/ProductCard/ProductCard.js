@@ -5,7 +5,6 @@ import { ProductDataContext } from '../../utilities/Context';
 
 const ProductCard = ({ data, user }) => {
   const { productData } = useContext(ProductDataContext);
-  console.log(user);
 
   const img = productData.find(
     (element) => element.name === data.productName

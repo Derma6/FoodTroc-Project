@@ -1,0 +1,17 @@
+.loader {
+  margin: auto;
+  height: 512px;
+  width: 512px;
+  background-image: url('../../styles/images/carotte.png');
+  animation: rotate 1s infinite linear;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg) scale(0.2);
+  }
+
+  to {
+    transform: rotate(360deg) scale(0.2);
+  }
+}

@@ -27,9 +27,20 @@ const ModifyLocation = ({ updateLocation }) => {
   return (
     <div className="pop-up">
       <h3 className="popup-header">Modifer votre localisation :</h3>
-      <input className="popup-text" type="text" onChange={(e) => setNewLocation(e.target.value)} />
-      <button className="validate-popup cancel" onClick={() => updateLocation(false)}>ANNULER</button>
-      <button className="validate-popup" onClick={() => changeLocation()}>ENREGISTRER</button>
+      <input
+        className="popup-text"
+        type="text"
+        onChange={(e) => setNewLocation(e.target.value.toUpperCase())}
+      />
+      <button
+        className="validate-popup cancel"
+        onClick={() => updateLocation(false)}
+      >
+        ANNULER
+      </button>
+      <button className="validate-popup" onClick={() => changeLocation()}>
+        ENREGISTRER
+      </button>
     </div>
   );
 };

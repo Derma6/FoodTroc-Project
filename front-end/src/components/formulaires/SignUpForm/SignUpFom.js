@@ -15,7 +15,7 @@ import SeparatorLessMargin from '../../SeparatorLessMargin/SeparatorLessMargin';
 //--------------------IMPORT CSS--------------------//
 import '../../../styles/forms.css';
 import { useNavigate } from 'react-router-dom';
-import validRegex from '../../../utilities/regex/regex'
+import validRegex from '../../../utilities/regex/regex';
 
 const SignUpFom = () => {
   const [name, setName] = useState();
@@ -45,8 +45,6 @@ const SignUpFom = () => {
       backgroundColor: buttonGrey === true && 'darkgrey',
     },
   };
-
-
 
   function signUp() {
     if (passwMatch) return setPasswMatch(true);
@@ -162,7 +160,7 @@ const SignUpFom = () => {
         )}
         <input
           type="text"
-          onChange={(e) => setLocation(e.target.value)}
+          onChange={(e) => setLocation(e.target.value.toUpperCase())}
           id="location"
           placeholder="LOCALISATION DE VOTRE POTAGER"
         />

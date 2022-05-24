@@ -57,9 +57,7 @@ const ProfilCard = ({ troqueur, research }) => {
         <div className="profil-card-btn">
           <button
             className="contact-btn"
-            onClick={() =>
-              (window.location = `mailto:${troqueur.email}?subject=${user.name} souhaite échanger des fruits et légumes avec vous !`)
-            }
+            onClick={() => (window.location = `mailto:${troqueur.email}`)}
           >
             CONTACTER {troqueur.name.toUpperCase()}
           </button>

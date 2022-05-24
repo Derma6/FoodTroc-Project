@@ -33,26 +33,62 @@
 .pop-up-garden-stock-container {
   margin: 2em auto;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 1.5em;
   overflow-y: scroll;
-  height: 70%;
+  height: 45vh;
 }
 .pop-up-garden-product-container {
   background-color: white;
   border-radius: 5px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5em;
   align-items: center;
+  justify-items: center;
   box-shadow: 0px 0px 5px;
   margin: 0.5em;
-  padding: 0.8em;
+  padding: 0.5em;
 }
 .pop-up-garden-product-container h3 {
-  margin-bottom: 1em;
+  font-weight: 400;
+  grid-column: 1/3;
+  text-align: center;
+  width: 50%;
+  border-bottom: 3px solid var(--secondary-color);
 }
 .pop-up-garden-product-description {
   text-align: center;
-  margin-top: 1em;
+  width: max-content;
+}
+.pop-up-garden-product-description p {
+  margin: 0.5em 0;
+}
+.pop-up-garden-product-description span {
+  font-weight: bold;
+}
+
+@media all and (max-width: 1380px) {
+  .pop-up-garden-stock-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media all and (max-width: 1045px) {
+  .pop-up-garden-stock-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media all and (max-width: 700px) {
+  .pop-up-garden-stock-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .pop-up-garden {
+    height: 90vh;
+  }
+  .pop-up-garden-contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }

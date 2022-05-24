@@ -9,8 +9,6 @@ import { ProductDataContext } from '../../utilities/Context';
 const ShowGardenPopUp = ({ troqueur, showGarden }) => {
   const { productData } = useContext(ProductDataContext);
 
-  console.log(troqueur);
-
   return (
     <div className="pop-up-garden">
       <div className="pop-up-garden-header">
@@ -43,8 +41,14 @@ const ShowGardenPopUp = ({ troqueur, showGarden }) => {
               className="product-img"
             />
             <div className="pop-up-garden-product-description">
-              <p>{product.quantity}</p>
-              <p>{product.freshness}</p>
+              <p>
+                Quantité disponible : <br />
+                <span>{product.quantity}</span>
+              </p>
+              <p>
+                Fraicheur du produit : <br />
+                <span>{product.freshness}</span>
+              </p>
             </div>
           </div>
         ))}

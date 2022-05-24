@@ -116,7 +116,7 @@ header h2:hover {
   background-color: var(--secondary-color);
   box-shadow: 1px 3px 8px black;
   cursor: pointer;
-  font-weight: 600;
+  /* font-weight: 600; */
 }
 
 .responsive-menu {
@@ -133,7 +133,7 @@ header h2:hover {
   gap: 5%;
   font-size: 1.3em;
   color: var(--primary-color);
-  font-weight: 600;
+  /* font-weight: 600; */
 }
 
 @media all and (max-width: 1800px) {

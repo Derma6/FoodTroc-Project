@@ -10,7 +10,7 @@ import validRegex from '../../../utilities/regex/regex'
 
 const Contact = () => {
   const { user } = useContext(UserContext);
-  const emailCreate = document.querySelector(".emailCreate")
+  const [emailCreate, setEmailCreate] = useState()
 
  // ---------------------------- EMAILJS ----------------------------------------------- //
   const form = useRef();
@@ -19,7 +19,8 @@ const Contact = () => {
 
 
   function validEmailContact() {
-    if (emailCreate.value.match(validRegex)) {
+    console.log(emailCreate)
+    if (emailCreate.match(validRegex)) {
       setInvalidEmail(false);
     } else {
       setInvalidEmail(true);
@@ -73,7 +74,10 @@ const Contact = () => {
         </p>
         <form ref={form} className="inputs">
           <input type="text" name="user_name" placeholder="PRÉNOM" />
-          <input type="email" name="user_email" className="emailCreate" placeholder="EMAIL" />
+          <input type="email" onChange={(e) => {
+            setEmailCreate(e.target.value)
+            console.log(emailCreate)
+            }} name="user_email" className="emailCreate" placeholder="EMAIL" />
           {invalidEmail && (
           <h4 style={{ margin: '3% 0 0% 0', color: 'darkgreen' }}>
             Veuillez entrer une adresse mail valide

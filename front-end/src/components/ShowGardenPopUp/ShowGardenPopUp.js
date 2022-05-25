@@ -12,7 +12,12 @@ const ShowGardenPopUp = ({ troqueur, showGarden }) => {
   return (
     <div className="pop-up-garden">
       <div className="pop-up-garden-header">
-        <button onClick={() => showGarden(false)}>RETOUR</button>
+        <button
+          className="pop-up-garden-back"
+          onClick={() => showGarden(false)}
+        >
+          RETOUR
+        </button>
         <h2>Bienvenue sur le potager de {troqueur.name}</h2>
         <div className="pop-up-garden-contact-container">
           <div className="location-container">

@@ -27,9 +27,6 @@ const LoginForm = () => {
   }
 
   function logIn() {
-    // setLoginError(false);
-    // if (loginError) return;
-
     setDataLoading(true);
 
     const auth = getAuth();
@@ -42,12 +39,12 @@ const LoginForm = () => {
         return uid;
       })
       .then((uid) => {
+        setDataLoading(false);
         if (document.referrer !== 'http://localhost:3000/troquez') {
           uid && navigate('/troquez', { replace: true });
         } else {
           uid && navigate('/', { replace: true });
         }
-        setDataLoading(false);
       })
       .catch((error) => {
         // error.style.display="block"

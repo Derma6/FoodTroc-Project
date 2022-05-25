@@ -71,7 +71,11 @@ const Troc = () => {
         ) : (
           <div className="troc">
             {data.map((troqueur) => (
-              <ProfilCard troqueur={troqueur} research={research} />
+              <ProfilCard
+                key={troqueur.uid}
+                troqueur={troqueur}
+                research={research}
+              />
             ))}
           </div>
         )}

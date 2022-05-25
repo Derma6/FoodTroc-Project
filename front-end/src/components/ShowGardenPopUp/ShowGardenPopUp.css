@@ -7,8 +7,8 @@
   background-image: url('../../styles/images/pano_fruitsveggies_lessOpacity.png');
   background-repeat: no-repeat;
   background-size: cover;
-  height: 80vh;
-  /* width: 60vw; */
+  /* height: 80vh; */
+  min-width: 60vw;
   border-radius: 8px;
   box-shadow: 0 0 0 max(100vh, 100vw) rgba(0, 0, 0, 0.8);
   padding: 2em;
@@ -37,7 +37,7 @@
   grid-template-rows: repeat(2, 1fr);
   gap: 1.5em;
   overflow-y: scroll;
-  height: 45vh;
+  max-height: 55vh;
 }
 .pop-up-garden-product-container {
   background-color: white;
@@ -91,4 +91,17 @@
     flex-direction: column;
     align-items: center;
   }
+}
+.pop-up-garden-back {
+  position: absolute;
+  width: 8em;
+  height: 5vh;
+  top: 1em;
+  left: 2.5em;
+  border: none;
+  color: white;
+  background-color: var(--secondary-color);
+  box-shadow: 1px 3px 8px black;
+  cursor: pointer;
+  font-weight: 600;
 }

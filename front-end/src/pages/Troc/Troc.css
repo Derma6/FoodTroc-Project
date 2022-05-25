@@ -4,6 +4,7 @@
 
 .troc-page {
   background-image: url('../../styles/images/background_fruitsveggies.webp');
+  min-height: 80vh;
 }
 .troc-filter-container {
   background-image: url('../../styles/images/pano_fruitsveggies_lessOpacity.png');
@@ -49,7 +50,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
-  padding: 5% 2%;
+  padding: 3em 2em;
   min-height: 80vh;
-  gap: 5%;
+  gap: 1em;
 }

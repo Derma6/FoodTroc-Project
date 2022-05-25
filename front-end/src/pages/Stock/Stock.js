@@ -8,11 +8,13 @@ import 'material-icons/iconfont/material-icons.css';
 
 //--------------------IMPORT CSS--------------------//
 import './Stock.css';
+import { redirect } from '../../utilities/redirect';
 
 const Stock = () => {
+  redirect('/');
 
   useEffect(() => {
-    document.title = "Mon stock - FoodTroc";  
+    document.title = 'Mon stock - FoodTroc';
   }, []);
 
   const { user } = useContext(UserContext);

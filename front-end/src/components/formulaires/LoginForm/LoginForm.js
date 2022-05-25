@@ -9,6 +9,7 @@ import '../../../styles/forms.css';
 import SeparatorLessMargin from '../../SeparatorLessMargin/SeparatorLessMargin';
 
 import { DataLoading, UserContext } from '../../../utilities/Context';
+import { redirect } from '../../../utilities/redirect';
 
 const LoginForm = () => {
   const { user, updateUser } = useContext(UserContext);
@@ -40,10 +41,13 @@ const LoginForm = () => {
       })
       .then((uid) => {
         setDataLoading(false);
-        if (document.referrer !== 'http://localhost:3000/troquez') {
-          uid && navigate('/troquez', { replace: true });
-        } else {
-          uid && navigate('/', { replace: true });
+
+        // const path = document.referrer.split('');
+        // console.log(path);
+
+        if (uid) {
+          navigate('/', { replace: true });
+          //document.referrer in prodution
         }
       })
       .catch((error) => {

@@ -1,13 +1,12 @@
-import React, {useEffect} from "react";
-import './Login.css'
+import React, { useEffect } from 'react';
+import './Login.css';
 //----------------------IMPORT COMPONENTS----------------------//
 
 import LoginForm from '../../components/formulaires/LoginForm/LoginForm';
 
 const Login = () => {
-
   useEffect(() => {
-    document.title = "Connexion - FoodTroc";  
+    document.title = 'Connexion - FoodTroc';
   }, []);
 
   return (

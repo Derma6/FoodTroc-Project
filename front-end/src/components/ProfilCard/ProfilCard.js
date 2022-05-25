@@ -34,7 +34,7 @@ const ProfilCard = ({ troqueur, research }) => {
         {troqueur.stock.map(
           (product, index) =>
             index < 6 && (
-              <div className="product-container">
+              <div key={Math.random()} className="product-container">
                 <img
                   src={
                     productData.find(

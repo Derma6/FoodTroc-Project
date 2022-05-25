@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Redirect } from 'react-router-dom';
 
 import './App.css';
 
@@ -30,6 +30,7 @@ import {
   ProductDataContext,
   DataLoading,
 } from '../../utilities/Context';
+// import { auth, onAuthStateChanged } from '../../utilities/firebase';
 
 function App() {
   // Variable with context
@@ -81,18 +82,21 @@ function App() {
             <DataLoading.Provider value={{ isDataLoading, setDataLoading }}>
               <Header show={show} showMenu={showMenu} />
               <Routes>
+                <Route path="*" element={<Error />}></Route>
                 <Route path="/" element={<Home />}></Route>
                 <Route path="/login" element={<Login />}></Route>
                 <Route path="/signUp" element={<SignUp />}></Route>
                 <Route path="/contact" element={<Contact />}></Route>
+                <Route path="/commentcamarche" element={<HowTo />}></Route>
                 {/* <Route path="/blog" element={<Blog />}></Route>
             <Route path="/blog/:article" element={<BlogArticle />}></Route> */}
-                <Route path="/commentcamarche" element={<HowTo />}></Route>
+
+                {/* Routes à protéger */}
                 <Route path="/troquez" element={<Troc />}></Route>
                 <Route path="/stock" element={<Stock />}></Route>
                 <Route path="/stock/add" element={<StockAdd />}></Route>
                 <Route path="/parametres" element={<Settings />}></Route>
-                <Route path="*" element={<Error />}></Route>
+                {/* Routes à protéger */}
               </Routes>
               <Footer />
             </DataLoading.Provider>

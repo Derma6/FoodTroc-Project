@@ -9,22 +9,16 @@ import ReAuthenticate from '../../components/formulaires/SettingsForm/popUP/ReAu
 import DeleteAccount from '../../components/formulaires/SettingsForm/popUP/DeleteAccount';
 
 import './Settings.css';
+import { redirect } from '../../utilities/redirect';
 
-import { auth, onAuthStateChanged } from '../../utilities/firebase';
-import { useNavigate } from 'react-router-dom';
+// import { auth, onAuthStateChanged } from '../../utilities/firebase';
 
 const Settings = () => {
+  redirect('/');
 
   useEffect(() => {
-    document.title = "Paramètres - FoodTroc";  
+    document.title = 'Paramètres - FoodTroc';
   }, []);
-
-  const navigate = useNavigate();
-  onAuthStateChanged(auth, (user) => {
-    if (!user) {
-      navigate('/', { replace: true });
-    }
-  });
 
   const [upName, updateName] = useState(false);
   const [upEmail, updateEmailLoc] = useState(false);

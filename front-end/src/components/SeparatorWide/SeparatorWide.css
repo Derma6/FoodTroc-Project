@@ -1,0 +1,6 @@
+.separator-wide {
+    width: 80%;
+    height: 3px;
+    background-color: var(--secondary-color);
+    margin: 3% auto;
+  }

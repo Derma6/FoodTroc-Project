@@ -69,9 +69,9 @@ const StockProductCard = ({ data }) => {
 
   return (
     <div className="stock-card">
-      {/* {askEdit && (
-        <EditProductCard />
-      )} */}
+      {askEdit && (
+        <EditProductCard data={data} setAskEdit={setAskEdit} />
+      )}
       {ask ? (
         <div className="confirm-delete-product">
           <p>Etes-vous sur ?</p>
@@ -80,15 +80,12 @@ const StockProductCard = ({ data }) => {
         </div>
       ) : (
         <>
-          {askEdit ? (
-            <EditProductCard />
-          ): (
-          <div>
             <div className="stock-info">
               <h3>{data.productName}</h3>
               <div className="edit-product">
                 <button className="product-btn material-icons" onClick={() => popAsk(true)}>delete</button>
                 <button onClick={() => {
+                  console.log(data)
                   setAskEdit(true)
                   }} className="product-btn material-icons">edit</button>
               </div>
@@ -96,8 +93,6 @@ const StockProductCard = ({ data }) => {
             </div>
             <SeparatorWide />
             <img alt={data.productName} className="product-picture" src={img} />
-          </div>
-          )}
         </>
       )}
     </div>

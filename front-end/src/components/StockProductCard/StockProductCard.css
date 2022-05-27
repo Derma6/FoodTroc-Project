@@ -1,37 +1,46 @@
 @import url('../../styles/theme-variables.css');
 
 .stock-card {
-    background-color: var(--secondary-color-lighter);
+    background-color:var(--input-secondary);
     padding: 5% 3% 5% 3%;
     border-radius: 20px;
-    width: 15vw;
     display: flex;
+    width: 12vw;
     flex-direction: column;
-    align-items: center;
+    transition: 300ms;
+    cursor: pointer;
 }
+
+/* .stock-card:hover {
+    transform: scale(1.05);
+} */
 
 .stock-info {
     display: flex;
-    align-items: center;
-    justify-content:center;
-    gap: 30%;
+    justify-content:space-between;
+    margin: 3% 5% 3% 5%;
+    padding: 3%;
 }
 
-.stock-info h2 {
-    margin: auto;
+/* .stock-info h3 {
     margin-left: 0%;
     margin-bottom: 0%;
-    width: 6vw;
-    align-self: flex-start;
-}
+} */
 
 .stock-card img {
-    width: 10vw;
-    height: 14vh;
+    width: 8vw;
+    margin: 5%;
+    height: 10vh;
     border-radius: 8px;
+    align-self: center;
 }
 
-.delete-product {
+.edit-product {
+    display: flex;
+    gap: 10%;
+}
+
+.product-btn {
     justify-self: flex-end;
     padding: 5%;
     border-radius: 8px;
@@ -41,7 +50,7 @@
     cursor: pointer;
 }
 
-.delete-product:hover {
+.product-btn:hover {
     background-color: var(--primary-color);
 }
 

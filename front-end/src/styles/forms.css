@@ -20,7 +20,7 @@
 .inputs input,
 .select-form {
   /* margin-top: 10%; */
-  background-color: white;
+  background-color: var(--input-secondary);
   height: 4.5vh;
   padding-left: 5%;
   border: 1.5px solid black;
@@ -58,6 +58,7 @@
   align-self: flex-end;
 }
 .inputs textarea {
+  background-color: var(--input-secondary);
   font-family: inherit;
   padding: 2% 5%;
   border: 1.5px solid black;
@@ -77,3 +78,4 @@
   color: var(--secondary-color);
   font-weight: 600;
 }
+

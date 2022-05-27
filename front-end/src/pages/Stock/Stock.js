@@ -34,9 +34,7 @@ const Stock = () => {
             ))
           )}
         </div>
-        <button className="add-btn">
-          <Link to="/stock/add">+</Link>
-        </button>
+          <Link className="add-btn material-icons" to="/stock/add">add</Link>
       </div>
     </main>
   );

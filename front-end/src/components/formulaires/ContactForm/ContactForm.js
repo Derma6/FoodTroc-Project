@@ -19,7 +19,7 @@ const Contact = () => {
 
 
   function validEmailContact() {
-    console.log(emailCreate)
+    if (user) return
     if (emailCreate.match(validRegex)) {
       setInvalidEmail(false);
     } else {
@@ -32,17 +32,29 @@ const Contact = () => {
     validEmailContact()
     if (invalidEmail) return
 
-    !user ? (
+    if (!user) {
       emailjs.sendForm('service_rr6dhnc', 'template_mhedlzq', form.current, 'qD5WRLIvKcOyPw8Zx')
-    ) : (
+      .then(() => {
+        setEmailStatus(true)
+      })
+    } else {
       emailjs.sendForm('service_rr6dhnc', 'template_962sczl', form.current, 'qD5WRLIvKcOyPw8Zx')
-    )
-      .then((result) => {
-          console.log(result.text);
-          setEmailStatus(true)
-      }, (error) => {
-          console.log(error.text);
-      });
+      .then(() => {
+        setEmailStatus(true)
+      })
+    }
+    
+    // !user ? (
+    //   emailjs.sendForm('service_rr6dhnc', 'template_mhedlzq', form.current, 'qD5WRLIvKcOyPw8Zx')
+    // ) : (
+    //   emailjs.sendForm('service_rr6dhnc', 'template_962sczl', form.current, 'qD5WRLIvKcOyPw8Zx')
+    // )
+      // .then(() => {
+      //   setEmailStatus(true)
+      //     console.log("Email envoyé");
+      // }, (error) => {
+      //     console.log(error.text);
+      // });
   
 
   };
@@ -58,7 +70,7 @@ const Contact = () => {
           <input name="user_message_subject" type="text" placeholder="OBJET DU MESSAGE" />
           <textarea name="user_message" type="text" rows="10" placeholder="VOTRE MESSAGE"></textarea>
         </form>
-        <button type="submit" onClick={sendEmail} className="validate-form">ENVOYER</button>
+        <button type="submit" onClick={() => sendEmail()} className="validate-form">ENVOYER</button>
         {
         emailStatus && <h4 style={{margin: "3% 0 0 0", color: "darkgreen"}}>Demande de contact envoyée.</h4>
       }
@@ -76,17 +88,16 @@ const Contact = () => {
           <input type="text" name="user_name" placeholder="PRÉNOM" />
           <input type="email" onChange={(e) => {
             setEmailCreate(e.target.value)
-            console.log(emailCreate)
-            }} name="user_email" className="emailCreate" placeholder="EMAIL" />
+            }} name="user_email" placeholder="EMAIL" />
           {invalidEmail && (
-          <h4 style={{ margin: '3% 0 0% 0', color: 'darkgreen' }}>
+          <h4 style={{ margin: '3% 0 0% 0', color: 'darkgreen'}}>
             Veuillez entrer une adresse mail valide
           </h4>
         )}
           <input type="text" name="user_message_subject" placeholder="OBJET DU MESSAGE" />
           <textarea type="text" name="user_message" rows="10" placeholder="VOTRE MESSAGE"></textarea>
         </form>
-        <button type="submit" onClick={sendEmail} className="validate-form">ENVOYER</button>
+        <button type="submit" onClick={() => sendEmail()} className="validate-form">ENVOYER</button>
         {
         emailStatus && <h4 style={{margin: "3% 0 0 0", color: "darkgreen"}}>Demande de contact envoyée.</h4>
       }

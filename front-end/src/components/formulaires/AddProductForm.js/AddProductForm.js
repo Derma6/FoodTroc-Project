@@ -12,10 +12,9 @@ const AddProductForm = () => {
   const [productName, setProductName] = useState();
   const [freshness, setFreshness] = useState();
   const [quantity, setQuantity] = useState();
+  const [quantityText, setQuantityText] = useState();
+  const [quantityType, setQuantityType] = useState();
   const [description, setDescription] = useState();
-
-  const quantityText = document.querySelector('.quantity-text');
-  const quantityType = document.querySelector('.quantity-type');
 
   const navigate = useNavigate();
 
@@ -66,15 +65,19 @@ const AddProductForm = () => {
         </select>
         <div className="quantity">
           <input
-            // onChange={(e) => setQuantity(e.target.value)}
+            onChange={(e) => {
+              setQuantityText(e.target.value);
+              setQuantity(`${e.target.value} ${quantityType}`);
+            }}
             className="quantity-text"
             id="object"
             placeholder="QUANTITÉ"
           />
           <select
-            onChange={(e) =>
-              setQuantity(`${quantityText.value} ${quantityType.value}`)
-            }
+            onChange={(e) => {
+              setQuantityType(e.target.value);
+              setQuantity(`${quantityText} ${e.target.value}`);
+            }}
             className="quantity-type select-form"
             label="quantityType"
           >
@@ -92,7 +95,12 @@ const AddProductForm = () => {
         ></textarea>
       </div>
 
-      <button className="validate-form" onClick={() => addProduct()}>
+      <button
+        className="validate-form"
+        onClick={() => {
+          addProduct();
+        }}
+      >
         AJOUTER
       </button>
     </div>

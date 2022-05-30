@@ -63,7 +63,9 @@ const Troc = () => {
                 <option value={5}>5 kms</option>
                 <option value={10}>10 kms</option>
                 <option value={15}>15 kms</option>
-                <option defaultValue={20}>20 kms</option>
+                <option defaultValue={20} selected>
+                  20 kms
+                </option>
                 <option value={25}>25 kms</option>
                 <option value={30}>30 kms</option>
               </select>

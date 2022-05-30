@@ -1,15 +1,16 @@
 @import url('../../styles/theme-variables.css');
 
 .stock-card {
-    background-color:white;
-    border: 2px solid var(--secondary-color);
-    padding: 5% 3% 5% 3%;
-    border-radius: 20px;
-    display: flex;
-    width: 12vw;
-    flex-direction: column;
-    transition: 300ms;
-    cursor: pointer;
+  background-color: white;
+  border: 2px solid var(--secondary-color);
+  padding: 5% 3% 5% 3%;
+  border-radius: 20px;
+  display: flex;
+  width: 15vw;
+  min-height: 25vh;
+  flex-direction: column;
+  transition: 300ms;
+  cursor: pointer;
 }
 
 /* .stock-card:hover {
@@ -17,10 +18,11 @@
 } */
 
 .stock-info {
-    display: flex;
-    justify-content:space-between;
-    margin: 3% 5% 3% 5%;
-    padding: 3%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin: 3% 5% 3% 5%;
+  padding: 3%;
 }
 
 /* .stock-info h3 {
@@ -29,45 +31,50 @@
 } */
 
 .stock-card img {
-    width: 8vw;
-    margin: 5%;
-    height: 10vh;
-    border-radius: 8px;
-    align-self: center;
+  width: 8vw;
+  margin: 5%;
+  height: 10vh;
+  border-radius: 8px;
+  align-self: center;
 }
 
 .edit-product {
-    display: flex;
-    gap: 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 10%;
+}
+.stock-card-header {
+  display: flex;
+  justify-content: space-around;
 }
 
 .product-btn {
-    justify-self: flex-end;
-    padding: 5%;
-    border-radius: 8px;
-    border: none;
-    background-color: var(--secondary-color);
-    align-self: flex-end;
-    cursor: pointer;
+  justify-self: flex-end;
+  padding: 5%;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--secondary-color);
+  align-self: flex-end;
+  cursor: pointer;
 }
 
 .product-btn:hover {
-    background-color: var(--primary-color);
+  background-color: var(--primary-color);
 }
 
 .confirm-delete-product {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .validate-delete {
-    margin-top: 5%;
-    width: 10vw;
-    height: 3vh;
-    border: none;
-    color: white;
-    background-color: var(--secondary-color);
-    box-shadow: 1px 3px 8px black;
-    cursor: pointer;
+  margin-top: 5%;
+  width: 10vw;
+  height: 3vh;
+  border: none;
+  color: white;
+  background-color: var(--secondary-color);
+  box-shadow: 1px 3px 8px black;
+  cursor: pointer;
 }
